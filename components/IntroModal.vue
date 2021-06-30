@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-light rounded-3xl overflow-hidden">
+  <div class="bg-light rounded-3xl overflow-hidden absolute">
     <div
       class="
         bg-dark
@@ -36,19 +36,19 @@
         Discover the digital world of Twente.
       </p>
       <div class="flex flex-col font-extralight mt-6 gap-4">
-        <div class="bg-dark rounded-2xl flex items-center hvr-grow">
+        <div class="bg-dark rounded-2xl flex items-center hvr-grow cursor-default">
           <p class="pl-5">💼</p>
           <p class="text-gray px-5 py-3 rounded-2xl">
             See what different companies have to offer
           </p>
         </div>
-        <div class="bg-dark rounded-2xl flex items-center hvr-grow">
+        <div class="bg-dark rounded-2xl flex items-center hvr-grow cursor-default">
           <p class="pl-5">💬</p>
           <p class="text-gray px-5 py-3 rounded-2xl">
             Chat and meet with potential partners
           </p>
         </div>
-        <div class="bg-dark rounded-2xl flex items-center hvr-grow">
+        <div class="bg-dark rounded-2xl flex items-center hvr-grow cursor-default">
           <p class="pl-5">⚡️</p>
           <p class="text-gray px-5 py-3">Advertise yourself and your company</p>
         </div>
@@ -75,6 +75,17 @@
           />
         </svg>
       </DButton>
+      <SwitchButton
+        class="absolute right-8 bottom-11"
+        option1="🇳🇱"
+        option2="🇬🇧"
+        locale1="nl"
+        locale2="en"
+        py="1"
+        gap="1"
+        px="4"
+        color="bg-lighter"
+      />
     </div>
   </div>
 </template>
@@ -83,5 +94,4 @@
 export default {}
 </script>
 
-<style>
-</style>
+<style></style>

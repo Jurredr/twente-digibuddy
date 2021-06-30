@@ -1,19 +1,32 @@
 <template>
   <div>
     <div
-      class="absolute w-1/2 h-full rounded-2xl bg-dark"
-      :class="selected == 0 ? 'left-0' : 'right-0'"
+      :class="
+        colorSelected + ' absolute w-1/2 h-full rounded-2xl ' +
+        ($i18n.locale === 'nl'
+          ? 'left-0'
+          : 'right-0')
+      "
     ></div>
-    <div class="flex items-center gap-2 rounded-2xl px-5 py-2 shadow bg-light">
+    <div
+      :class="
+        'flex items-center rounded-2xl shadow ' + color + ' gap-' +
+        gap +
+        ' px-' +
+        px +
+        ' py-' +
+        py
+      "
+    >
       <p
-        class="text-white relative pr-4 text-xl cursor-pointer hvr-grow"
-        @click="selected = 0; $i18n.locale = locale1"
+        :class="'text-white relative text-xl cursor-pointer hvr-grow pr-' + pr"
+        @click="$i18n.locale = locale1"
       >
         {{ option1 }}
       </p>
       <p
         class="text-white relative text-xl cursor-pointer hvr-grow"
-        @click="selected = 1; $i18n.locale = locale2"
+        @click="$i18n.locale = locale2"
       >
         {{ option2 }}
       </p>
@@ -41,12 +54,31 @@ export default Vue.extend({
     locale2: {
       type: String,
       default: 'en',
-    }
-  },
-  data() {
-    return {
-      selected: 0,
-    }
+    },
+    px: {
+      type: Number,
+      default: 5,
+    },
+    py: {
+      type: Number,
+      default: 2,
+    },
+    pr: {
+      type: Number,
+      default: 4,
+    },
+    gap: {
+      type: Number,
+      default: 2,
+    },
+    color: {
+      type: String,
+      default: 'bg-light',
+    },
+    colorSelected: {
+      type: String,
+      default: 'bg-dark',
+    },
   },
 })
 </script>

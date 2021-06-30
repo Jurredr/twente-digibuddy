@@ -105,8 +105,7 @@
       </DButton>
 
       <!-- Language Selector -->
-      <SwitchButton class="absolute top-20 left-6" option1="🇳🇱" option2="🇬🇧" locale1="nl" locale2="en">
-      </SwitchButton>
+      <SwitchButton class="absolute top-20 left-6" option1="🇳🇱" option2="🇬🇧" locale1="nl" locale2="en" />
 
       <!-- Filters -->
       <div class="absolute top-6 right-6 flex gap-4">
@@ -125,9 +124,9 @@
       <!-- Widget Window -->
       <WidgetWindow class="right-6 bottom-6" />
 
-      <!-- Welcome Modal -->
+      <!-- Intro Modal -->
       <div
-        v-if="modalShown"
+        v-if="introShown"
         class="
           absolute
           top-0
@@ -141,7 +140,7 @@
           shadow
         "
       >
-        <IntroModal @modal-close="modalShown = false" />
+        <IntroModal @modal-close="introShown = false" />
       </div>
 
       <!-- Help Modal -->
@@ -192,7 +191,7 @@ export default Vue.extend({
     ]
 
     return {
-      modalShown: true,
+      introShown: true,
       helpShown: false,
       filters,
       selectedFilter: filters[0],
