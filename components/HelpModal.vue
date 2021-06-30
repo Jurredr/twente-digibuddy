@@ -68,22 +68,54 @@
         {{ $t('helpSubHeader') }}
       </p>
       <div class="flex flex-col font-extralight mt-6 gap-4">
-        <div class="bg-dark rounded-2xl flex items-center hvr-grow">
-          <p class="pl-5">💼</p>
-          <p class="text-gray px-5 py-3 rounded-2xl">
-            See what different companies have to offer
-          </p>
-        </div>
-        <div class="bg-dark rounded-2xl flex items-center hvr-grow">
-          <p class="pl-5">💬</p>
-          <p class="text-gray px-5 py-3 rounded-2xl">
-            Chat and meet with potential partners
-          </p>
-        </div>
-        <div class="bg-dark rounded-2xl flex items-center hvr-grow">
-          <p class="pl-5">⚡️</p>
-          <p class="text-gray px-5 py-3">Advertise yourself and your company</p>
-        </div>
+        <FAQitem translation-key-q="helpQ1" translation-key-a="helpA1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="8.146"
+            height="14.247"
+            viewBox="0 0 8.146 14.247"
+          >
+            <path
+              id="Icon_ionic-ios-arrow-forward"
+              data-name="Icon ionic-ios-arrow-forward"
+              d="M16.937,13.317,11.546,7.93a1.014,1.014,0,0,1,0-1.438,1.027,1.027,0,0,1,1.442,0L19.1,12.6a1.016,1.016,0,0,1,.03,1.4l-6.133,6.146a1.018,1.018,0,1,1-1.442-1.438Z"
+              transform="translate(-11.246 -6.196)"
+              fill="#fff"
+            />
+          </svg>
+        </FAQitem>
+        <FAQitem translation-key-q="helpQ2" translation-key-a="helpA2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="8.146"
+            height="14.247"
+            viewBox="0 0 8.146 14.247"
+          >
+            <path
+              id="Icon_ionic-ios-arrow-forward"
+              data-name="Icon ionic-ios-arrow-forward"
+              d="M16.937,13.317,11.546,7.93a1.014,1.014,0,0,1,0-1.438,1.027,1.027,0,0,1,1.442,0L19.1,12.6a1.016,1.016,0,0,1,.03,1.4l-6.133,6.146a1.018,1.018,0,1,1-1.442-1.438Z"
+              transform="translate(-11.246 -6.196)"
+              fill="#fff"
+            />
+          </svg>
+        </FAQitem>
+        <FAQitem translation-key-q="helpQ3" translation-key-a="helpA3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="8.146"
+            height="14.247"
+            viewBox="0 0 8.146 14.247"
+          >
+            <path
+              id="Icon_ionic-ios-arrow-forward"
+              data-name="Icon ionic-ios-arrow-forward"
+              d="M16.937,13.317,11.546,7.93a1.014,1.014,0,0,1,0-1.438,1.027,1.027,0,0,1,1.442,0L19.1,12.6a1.016,1.016,0,0,1,.03,1.4l-6.133,6.146a1.018,1.018,0,1,1-1.442-1.438Z"
+              transform="translate(-11.246 -6.196)"
+              fill="#fff"
+            />
+          </svg>
+        </FAQitem>
       </div>
       <p class="text-gray font-light text-center mt-7">
         {{ $t('helpUnanswered') }}

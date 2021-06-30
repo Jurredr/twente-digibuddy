@@ -17,4 +17,7 @@ export default {
   helpHeader: 'In need of help?',
   helpSubHeader: 'Here are some frequently asked questions:',
   helpUnanswered: 'Still have questions, or found any issues?',
+  helpQ1: 'How can I filter companies?',
+  helpQ2: 'How can I contact a company?',
+  helpQ3: 'How can I add my own company?',
 }

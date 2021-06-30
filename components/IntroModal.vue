@@ -92,7 +92,7 @@
         py="1"
         gap="1"
         px="4"
-        color="bg-lighter"
+        color="bg-midDark"
       />
     </div>
   </div>

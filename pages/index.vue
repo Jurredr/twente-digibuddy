@@ -231,6 +231,9 @@ export default Vue.extend({
 /* Import Montserrat font */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
 
+/* Import custom styles */
+@import url('../assets/styles/custom.scss');
+
 /* Import custom animations */
 @import url('../assets/styles/animations.scss');
 </style>

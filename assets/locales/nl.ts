@@ -17,4 +17,7 @@ export default {
   helpHeader: 'Hulp nodig?',
   helpSubHeader: 'Hier zijn een aantal veel gestelde vragen:',
   helpUnanswered: 'Nog steeds vragen, of een probleem gevonden?',
+  helpQ1: 'Hoe kan ik bedrijven filteren?',
+  helpQ2: 'Hoe kan ik een bedrijf contacteren?',
+  helpQ3: 'Hoe kan ik mijn eigen bedrijf toevoegen?',
 }
