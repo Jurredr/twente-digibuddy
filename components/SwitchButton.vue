@@ -56,20 +56,20 @@ export default Vue.extend({
       default: 'en',
     },
     px: {
-      type: Number,
-      default: 5,
+      type: String,
+      default: '5',
     },
     py: {
-      type: Number,
-      default: 2,
+      type: String,
+      default: '2',
     },
     pr: {
-      type: Number,
-      default: 4,
+      type: String,
+      default: '4',
     },
     gap: {
-      type: Number,
-      default: 2,
+      type: String,
+      default: '2',
     },
     color: {
       type: String,

@@ -30,27 +30,35 @@
     </div>
     <div class="p-8 flex flex-col items-center">
       <p class="text-white font-semibold text-center text-lg">
-        Welcome to Twente! 🇳🇱
+        {{ $t('introHeader') }}
       </p>
       <p class="text-gray font-light mt-5 text-center">
-        Discover the digital world of Twente.
+        {{ $t('introSubHeader') }}
       </p>
       <div class="flex flex-col font-extralight mt-6 gap-4">
-        <div class="bg-dark rounded-2xl flex items-center hvr-grow cursor-default">
+        <div
+          class="bg-dark rounded-2xl flex items-center hvr-grow cursor-default"
+        >
           <p class="pl-5">💼</p>
           <p class="text-gray px-5 py-3 rounded-2xl">
-            See what different companies have to offer
+            {{ $t('introFeature1') }}
           </p>
         </div>
-        <div class="bg-dark rounded-2xl flex items-center hvr-grow cursor-default">
+        <div
+          class="bg-dark rounded-2xl flex items-center hvr-grow cursor-default"
+        >
           <p class="pl-5">💬</p>
           <p class="text-gray px-5 py-3 rounded-2xl">
-            Chat and meet with potential partners
+            {{ $t('introFeature2') }}
           </p>
         </div>
-        <div class="bg-dark rounded-2xl flex items-center hvr-grow cursor-default">
+        <div
+          class="bg-dark rounded-2xl flex items-center hvr-grow cursor-default"
+        >
           <p class="pl-5">⚡️</p>
-          <p class="text-gray px-5 py-3">Advertise yourself and your company</p>
+          <p class="text-gray px-5 py-3">
+            {{ $t('introFeature3') }}
+          </p>
         </div>
       </div>
       <DButton
@@ -59,7 +67,7 @@
         selected
         @click="$emit('modal-close')"
       >
-        Explore
+        {{ $t('introButton') }}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="15.75"
