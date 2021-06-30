@@ -1,5 +1,5 @@
 <template>
-  <Tutorial/>
+  <div class="w-full h-screen"><google-map></google-map></div>
 </template>
 
 <script lang="ts">
