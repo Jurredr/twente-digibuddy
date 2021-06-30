@@ -48,11 +48,42 @@
           />
         </svg>
       </div>
-      <p class="text-white font-semibold text-lg">{{ getPageTitle(currentPage) }}</p>
+      <p class="text-white font-semibold text-lg">
+        {{ getPageTitle(currentPage) }}
+      </p>
     </div>
 
     <div class="content-container flex justify-center">
-      <div class="content"></div>
+      <div class="content">
+        <div
+          v-if="!collapsed"
+          class="
+            news-item
+            left-7
+            absolute
+            animate-pulse
+            rounded-2xl
+            bg-midDark
+            mt-5
+            h-12
+            w-64
+          "
+        ></div>
+        <div
+          v-if="!collapsed"
+          class="
+            news-item2
+            left-7
+            absolute
+            animate-pulse
+            rounded-2xl
+            bg-midDark
+            mt-20
+            h-12
+            w-64
+          "
+        ></div>
+      </div>
       <div
         v-if="collapsed"
         class="
@@ -101,7 +132,13 @@
           gap-11
         "
       >
-        <div class="nav-news cursor-pointer flex justify-center hvr-grow" @click="currentPage = 0; collapsed = false">
+        <div
+          class="nav-news cursor-pointer flex justify-center hvr-grow"
+          @click="
+            currentPage = 0
+            collapsed = false
+          "
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="19.739"
@@ -117,10 +154,17 @@
             />
           </svg>
           <div
-            v-if="currentPage === 0" class="select-bubble absolute rounded-full bg-pink h-1 w-1 top-6"
+            v-if="currentPage === 0"
+            class="select-bubble absolute rounded-full bg-pink h-1 w-1 top-6"
           ></div>
         </div>
-        <div class="nav-profile cursor-pointer flex justify-center hvr-grow" @click="currentPage = 1; collapsed = false">
+        <div
+          class="nav-profile cursor-pointer flex justify-center hvr-grow"
+          @click="
+            currentPage = 1
+            collapsed = false
+          "
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18.739"
@@ -136,10 +180,17 @@
             />
           </svg>
           <div
-            v-if="currentPage === 1" class="select-bubble absolute rounded-full bg-pink h-1 w-1 top-6"
+            v-if="currentPage === 1"
+            class="select-bubble absolute rounded-full bg-pink h-1 w-1 top-6"
           ></div>
         </div>
-        <div class="nav-chat cursor-pointer flex justify-center hvr-grow" @click="currentPage = 2; collapsed = false">
+        <div
+          class="nav-chat cursor-pointer flex justify-center hvr-grow"
+          @click="
+            currentPage = 2
+            collapsed = false
+          "
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="21.411"
@@ -168,10 +219,17 @@
             </g>
           </svg>
           <div
-            v-if="currentPage === 2" class="select-bubble absolute rounded-full bg-pink h-1 w-1 top-6"
+            v-if="currentPage === 2"
+            class="select-bubble absolute rounded-full bg-pink h-1 w-1 top-6"
           ></div>
         </div>
-        <div class="nav-settings cursor-pointer flex justify-center hvr-grow" @click="currentPage = 3; collapsed = false">
+        <div
+          class="nav-settings cursor-pointer flex justify-center hvr-grow"
+          @click="
+            currentPage = 3
+            collapsed = false
+          "
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20.354"
@@ -187,7 +245,8 @@
             />
           </svg>
           <div
-            v-if="currentPage === 3" class="select-bubble absolute rounded-full bg-pink h-1 w-1 top-6"
+            v-if="currentPage === 3"
+            class="select-bubble absolute rounded-full bg-pink h-1 w-1 top-6"
           ></div>
         </div>
       </div>
@@ -205,7 +264,7 @@ export default {
   },
   methods: {
     getPageTitle(currentPage) {
-      switch(currentPage) {
+      switch (currentPage) {
         case 0:
           return this.$t('news')
         case 1:
@@ -215,8 +274,8 @@ export default {
         case 3:
           return this.$t('settings')
       }
-    }
-  }
+    },
+  },
 }
 </script>
 
