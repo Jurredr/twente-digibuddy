@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-screen flex flex-col bg-dark">
+  <div class="w-full h-screen flex flex-col bg-dark font-montserrat">
     <div class="relative flex-grow m-4 rounded-2xl overflow-hidden">
       <GmapMap
         class="w-full h-full"
@@ -59,3 +59,7 @@ export default Vue.extend({
   },
 })
 </script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+</style>
