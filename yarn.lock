@@ -946,6 +946,11 @@
   dependencies:
     purgecss "^4.0.3"
 
+"@google/markerclustererplus@^5.1.0":
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/@google/markerclustererplus/-/markerclustererplus-5.1.3.tgz#dd7ddbb2a17c977e0b0252c3d8e61fcf502b1bf2"
+  integrity sha512-2wQGO6GGbKPC2tNmTz8ei1zBa64zV3QBBvgLHiPvYqUA63230qNqfQpN+nzsrl1RM40NJtty4Y1CEQKxq6MBGg==
+
 "@koa/router@^9.0.1":
   version "9.4.0"
   resolved "https://registry.yarnpkg.com/@koa/router/-/router-9.4.0.tgz#734b64c0ae566eb5af752df71e4143edc4748e48"
@@ -4824,6 +4829,13 @@ globby@^11.0.3:
     ignore "^5.1.4"
     merge2 "^1.3.0"
     slash "^3.0.0"
+
+gmap-vue@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/gmap-vue/-/gmap-vue-1.5.0.tgz#43de7cba85c61280bfa65e6450b9d55657e9a82f"
+  integrity sha512-WE0VnSM1EsaTFVsnq53WGnre9cP1Q9DPCr0IiPmaoqsQioAKtTNBNyomrEvg0NIsVuxrdC2qvbgZPXCa8v/mBA==
+  dependencies:
+    "@google/markerclustererplus" "^5.1.0"
 
 graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.2.0, graceful-fs@^4.2.4:
   version "4.2.6"
@@ -9667,13 +9679,6 @@ vue@^2.6.12:
   version "2.6.14"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.14.tgz#e51aa5250250d569a3fbad3a8a5a687d6036e235"
   integrity sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ==
-
-vuejs-google-maps@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/vuejs-google-maps/-/vuejs-google-maps-0.1.1.tgz#810984c847ca28492aa611a401499256f178348b"
-  integrity sha512-lZRZP8V3ptfikR7Nvtj98Ad9CZveYlzfBKhHx87bha1Vd+sZ3sOhvxylOWMK/egYFMWW5Uq1y2Dfs3oi299uaw==
-  dependencies:
-    vue "^2.6.12"
 
 vuex@^3.6.2:
   version "3.6.2"

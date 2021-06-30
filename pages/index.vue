@@ -1,7 +1,8 @@
 <template>
   <div class="w-full h-screen flex flex-col bg-dark">
     <div class="relative flex-grow m-4 rounded-2xl overflow-hidden">
-      <google-map
+      <GmapMap
+        class="w-full h-full"
         :center="{ lat: 52.21833, lng: 6.89583 }"
         :zoom="1"
         :options="{
@@ -18,28 +19,12 @@
           },
         }"
       >
-        <google-map-marker
+        <GmapMarker
           :position="{ lat: 52.21833, lng: 6.89583 }"
           icon="http://maps.google.com/mapfiles/kml/paddle/purple-blank.png"
         />
-      </google-map>
-      <a
-        href="#"
-        class="
-          flex
-          items-center
-          gap-2
-          absolute
-          top-4
-          left-4
-          rounded-2xl
-          text-white
-          px-4
-          py-2
-          bg-dark
-          hover:bg-light
-        "
-      >
+      </GmapMap>
+      <DButton href="#" class="absolute top-4 left-4">
         <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
           <path
             fill="currentColor"
@@ -47,7 +32,7 @@
           />
         </svg>
         Help
-      </a>
+      </DButton>
     </div>
   </div>
 </template>

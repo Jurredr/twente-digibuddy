@@ -25,8 +25,7 @@ export default {
       {
         hid: 'keywords',
         name: 'keywords',
-        content:
-          'Twente, Digital, Digibuddy',
+        content: 'Twente, Digital, Digibuddy',
       },
       {
         hid: 'subject',
@@ -125,7 +124,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ['~/plugins/gmap.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -142,15 +141,13 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    [
-      'vuejs-google-maps/nuxt',
-      { apiKey: 'AIzaSyBtH1MzzE-57t2Xf1PN9dAgwa3XDBm2ufw', libraries: [] },
-    ],
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    transpile: [/^gmap-vue($|\/)/],
+  },
 }
