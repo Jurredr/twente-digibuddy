@@ -33,6 +33,16 @@
         </svg>
         Help
       </DButton>
+      <div class="absolute top-4 right-4 flex gap-4">
+        <DButton
+          v-for="filter in filters"
+          :key="filter"
+          href="javascript:void(0)"
+          :selected="selected === filter"
+          @click="selected = filter"
+          >{{ filter }}</DButton
+        >
+      </div>
     </div>
   </div>
 </template>
@@ -40,5 +50,12 @@
 <script lang="ts">
 import Vue from 'vue'
 
-export default Vue.extend({})
+export default Vue.extend({
+  data() {
+    return {
+      selected: 'All',
+      filters: ['All', 'Persons', 'People', 'Things'],
+    }
+  },
+})
 </script>
