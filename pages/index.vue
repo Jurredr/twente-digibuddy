@@ -101,11 +101,11 @@
             />
           </g>
         </svg>
-        Help
+        {{ $t('help') }}
       </DButton>
 
       <!-- Language Selector -->
-      <SwitchButton class="absolute top-20 left-6" option1="🇳🇱" option2="🇬🇧">
+      <SwitchButton class="absolute top-20 left-6" option1="🇳🇱" option2="🇬🇧" locale1="nl" locale2="en">
       </SwitchButton>
 
       <!-- Filters -->

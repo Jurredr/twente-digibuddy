@@ -1,3 +1,5 @@
+import i18n from './assets/config/i18n'
+
 const description = 'Putting digital Twente on the map!'
 const title = 'Twente Digibuddy'
 const image = ''
@@ -146,7 +148,21 @@ export default {
   ],
 
   // i18n module configuration: https://i18n.nuxtjs.org/
-  i18n: {},
+  i18n: {
+    vueI18nLoader: true,
+    defaultLocale: 'nl',
+    locales: [
+      {
+        code: 'nl',
+        name: 'Nederlands',
+      },
+      {
+        code: 'en',
+        name: 'English',
+      },
+    ],
+    vueI18n: i18n
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
