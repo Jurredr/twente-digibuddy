@@ -1,3 +1,7 @@
 export default {
-  "help": "Hulp"
+  help: 'Hulp',
+  news: 'Nieuws',
+  profile: 'Profiel',
+  chat: 'Chat',
+  settings: 'Instellingen',
 }

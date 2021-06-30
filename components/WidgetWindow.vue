@@ -48,7 +48,7 @@
           />
         </svg>
       </div>
-      <p class="text-white font-semibold text-lg">{{ pages[currentPage] }}</p>
+      <p class="text-white font-semibold text-lg">{{ getPageTitle(currentPage) }}</p>
     </div>
 
     <div class="content-container flex justify-center">
@@ -195,15 +195,28 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   data() {
     return {
       collapsed: false,
-      pages: ['News', 'Profile', 'Chat', 'Settings'],
       currentPage: 0,
     }
   },
+  methods: {
+    getPageTitle(currentPage: Number) {
+      switch(currentPage) {
+        case 0:
+          return this.$t('news')
+        case 1:
+          return this.$t('profile')
+        case 2:
+          return this.$t('chat')
+        case 3:
+          return this.$t('settings')
+      }
+    }
+  }
 }
 </script>
 
