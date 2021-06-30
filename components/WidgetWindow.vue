@@ -29,6 +29,7 @@
           flex
           justify-center
           items-center
+          hvr-grow
         "
         @click="collapsed = true"
       >
@@ -66,6 +67,7 @@
           justify-center
           items-center
           top-2
+          hvr-grow
         "
         @click="collapsed = false"
       >

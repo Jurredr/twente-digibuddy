@@ -27,7 +27,7 @@
       </GmapMap>
 
       <!-- Help -->
-      <DButton href="#" class="absolute top-6 left-6 text-sm h-11">
+      <DButton href="#" class="absolute top-6 left-6 text-sm h-11 hvr-grow">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="18.157"
@@ -109,7 +109,7 @@
           shadow
         "
       >
-        <IntroModal @click="modalShown = false" />
+        <IntroModal @modal-close="modalShown = false" />
       </div>
 
       <!-- Widget Window -->
@@ -124,9 +124,9 @@ import Vue from 'vue'
 export default Vue.extend({
   data() {
     return {
-      modalShown: false,
-      selected: 'All',
-      filters: ['All', 'Persons', '🙋‍♂️ People', 'Things'],
+      modalShown: true,
+      selected: '🙋‍♂️ All',
+      filters: ['🙋‍♂️ All', '🙋‍♂️ Persons', '🙋‍♂️ People', '🙋‍♂️ Things'],
     }
   },
 })
@@ -135,4 +135,7 @@ export default Vue.extend({
 <style>
 /* Import Montserrat font */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
+
+/* Import custom animations */
+@import url('../assets/styles/animations.scss');
 </style>

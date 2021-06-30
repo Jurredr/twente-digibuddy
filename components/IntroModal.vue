@@ -57,7 +57,7 @@
         href="javascript:void(0)"
         class="mt-8 mb-2 font-semibold text-sm text-light px-8 py-3 hvr-shrink"
         selected
-        @click="modalShown = false"
+        @click="$emit('modal-close')"
       >
         Explore
         <svg
@@ -84,31 +84,4 @@ export default {}
 </script>
 
 <style>
-/* Grow */
-.hvr-grow {
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-}
-.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-}
-
-/* Shrink */
-.hvr-shrink {
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-}
-.hvr-shrink:hover, .hvr-shrink:focus, .hvr-shrink:active {
-  -webkit-transform: scale(0.9);
-  transform: scale(0.9);
-}
 </style>
