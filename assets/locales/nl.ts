@@ -20,4 +20,7 @@ export default {
   helpQ1: 'Hoe kan ik bedrijven filteren?',
   helpQ2: 'Hoe kan ik een bedrijf contacteren?',
   helpQ3: 'Hoe kan ik mijn eigen bedrijf toevoegen?',
+  helpA1: 'Door middel van de filters rechtsbovenin!',
+  helpA2: 'Selecteer een bedrijf en klik het 💬 icoon!',
+  helpA3: 'Log in en voeg het toe vanuit Profiel!',
 }

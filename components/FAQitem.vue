@@ -12,10 +12,11 @@
         {{ $t(translationKeyQ) }}
       </p>
     </div>
-    <div
-      v-if="!collapsed"
-      class="bg-midDark rounded-b-2xl w-full h-12"
-    ></div>
+    <div v-if="!collapsed" class="bg-midDark rounded-b-2xl w-full h-12">
+      <p class="text-gray px-5 py-3 rounded-2xl">
+        {{ $t(translationKeyA) }}
+      </p>
+    </div>
   </div>
 </template>
 

@@ -20,4 +20,7 @@ export default {
   helpQ1: 'How can I filter companies?',
   helpQ2: 'How can I contact a company?',
   helpQ3: 'How can I add my own company?',
+  helpA1: 'By using the filters in the top-right!',
+  helpA2: 'Just select a company and click the 💬 icon!',
+  helpA3: 'Sign-in and add it through Profile!',
 }
