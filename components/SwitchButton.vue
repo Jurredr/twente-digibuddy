@@ -1,5 +1,5 @@
 <template>
-  <container>
+  <div>
     <div
       class="absolute w-1/2 h-full rounded-2xl bg-dark"
       :class="selected == 0 ? 'left-0' : 'right-0'"
@@ -18,7 +18,7 @@
         {{ option2 }}
       </p>
     </div>
-  </container>
+  </div>
 </template>
 
 <script lang="ts">

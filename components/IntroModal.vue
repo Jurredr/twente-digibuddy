@@ -55,7 +55,7 @@
       </div>
       <DButton
         href="javascript:void(0)"
-        class="mt-8 mb-2 font-semibold text-sm text-light px-8 py-3 hvr-shrink"
+        class="mt-8 mb-2 font-semibold text-sm text-light px-8 py-3 hvr-grow"
         selected
         @click="$emit('modal-close')"
       >

@@ -13,6 +13,7 @@ module.exports = {
       gray: '#dbdcf2',
       light: '#2b2a65',
       dark: '#1a1c47',
+      pink: '#fe95dd',
     },
   },
   variants: {

@@ -1,6 +1,7 @@
 <script lang="ts">
+import { Context } from '@nuxt/types'
 export default {
-  asyncData ({ redirect }) {
+  asyncData ({ redirect }: Context) {
     return redirect('/')
   }
 }

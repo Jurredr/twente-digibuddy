@@ -90,7 +90,7 @@
       <div class="absolute top-6 right-6 flex gap-4">
         <DButton
           v-for="filter in filters"
-          :key="filter"
+          :key="filter.name"
           href="javascript:void(0)"
           :selected="selectedFilter === filter"
           @click="selectedFilter = filter"
