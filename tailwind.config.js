@@ -9,6 +9,8 @@ module.exports = {
     },
     colors: {
       white: colors.white,
+      light: '#2b2a65',
+      dark: '#1a1c47',
     },
   },
   variants: {
