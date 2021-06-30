@@ -73,7 +73,7 @@
         </svg>
         Help
       </DButton>
-      <SwitchButton href="#" class="" >
+      <SwitchButton class="absolute top-20 left-4" option1="🇳🇱" option2="🇬🇧">
       </SwitchButton>
       <div class="absolute top-4 right-4 flex gap-4">
         <DButton
