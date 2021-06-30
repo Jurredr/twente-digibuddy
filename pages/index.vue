@@ -1,6 +1,7 @@
 <template>
   <div class="w-full h-screen flex flex-col bg-dark font-montserrat">
-    <div class="relative flex-grow m-4 rounded-2xl overflow-hidden">
+    <div class="relative flex-grow m-5 rounded-2xl overflow-hidden">
+      <!-- Map Interface -->
       <GmapMap
         class="w-full h-full"
         :center="{ lat: 52.21833, lng: 6.89583 }"
@@ -24,7 +25,9 @@
           icon="http://maps.google.com/mapfiles/kml/paddle/purple-blank.png"
         />
       </GmapMap>
-      <DButton href="#" class="absolute top-4 left-4">
+
+      <!-- Help -->
+      <DButton href="#" class="absolute top-6 left-6">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="21.552"
@@ -73,9 +76,13 @@
         </svg>
         Help
       </DButton>
-      <SwitchButton class="absolute top-16 left-4" option1="🇳🇱" option2="🇬🇧">
+
+      <!-- Language Selector -->
+      <SwitchButton class="absolute top-20 left-6" option1="🇳🇱" option2="🇬🇧">
       </SwitchButton>
-      <div class="absolute top-4 right-4 flex gap-4">
+
+      <!-- Filters -->
+      <div class="absolute top-6 right-6 flex gap-4">
         <DButton
           v-for="filter in filters"
           :key="filter"
@@ -85,6 +92,8 @@
           >{{ filter }}</DButton
         >
       </div>
+
+      <!-- Welcome Modal -->
       <div
         v-if="modalShown"
         class="
@@ -97,10 +106,14 @@
           flex
           justify-center
           items-center
+          shadow
         "
       >
-      <IntroModal @click="modalShown = false"/>
+        <IntroModal @click="modalShown = false" />
       </div>
+
+      <!-- Widget Window -->
+      <WidgetWindow class="right-6 bottom-6" />
     </div>
   </div>
 </template>
@@ -111,7 +124,7 @@ import Vue from 'vue'
 export default Vue.extend({
   data() {
     return {
-      modalShown: true,
+      modalShown: false,
       selected: 'All',
       filters: ['All', 'Persons', '🙋‍♂️ People', 'Things'],
     }

@@ -4,7 +4,7 @@
       class="absolute w-1/2 h-full rounded-2xl bg-dark"
       :class="selected == 0 ? 'left-0' : 'right-0'"
     ></div>
-    <div class="flex items-center gap-2 rounded-2xl px-4 py-2 shadow bg-light">
+    <div class="flex items-center gap-2 rounded-2xl px-5 py-2 shadow bg-light">
       <p
         class="text-white relative pr-4 text-xl cursor-pointer"
         @click="selected = 0"
