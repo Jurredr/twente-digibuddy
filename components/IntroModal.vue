@@ -36,26 +36,26 @@
         Discover the digital world of Twente.
       </p>
       <div class="flex flex-col font-extralight mt-6 gap-4">
-        <div class="bg-dark rounded-2xl flex items-center h-12">
+        <div class="bg-dark rounded-2xl flex items-center hvr-grow">
           <p class="pl-5">💼</p>
-          <p class="text-gray px-5 py-2 rounded-2xl">
+          <p class="text-gray px-5 py-3 rounded-2xl">
             See what different companies have to offer
           </p>
         </div>
-        <div class="bg-dark rounded-2xl flex items-center h-12">
+        <div class="bg-dark rounded-2xl flex items-center hvr-grow">
           <p class="pl-5">💬</p>
-          <p class="text-gray px-5 py-2 rounded-2xl">
+          <p class="text-gray px-5 py-3 rounded-2xl">
             Chat and meet with potential partners
           </p>
         </div>
-        <div class="bg-dark rounded-2xl flex items-center h-12">
+        <div class="bg-dark rounded-2xl flex items-center hvr-grow">
           <p class="pl-5">⚡️</p>
-          <p class="text-gray px-5 py-2">Advertise yourself and your company</p>
+          <p class="text-gray px-5 py-3">Advertise yourself and your company</p>
         </div>
       </div>
       <DButton
         href="javascript:void(0)"
-        class="mt-8 mb-2 font-semibold text-sm text-light px-8 py-3"
+        class="mt-8 mb-2 font-semibold text-sm text-light px-8 py-3 hvr-shrink"
         selected
         @click="modalShown = false"
       >
@@ -83,4 +83,32 @@
 export default {}
 </script>
 
-<style></style>
+<style>
+/* Grow */
+.hvr-grow {
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+/* Shrink */
+.hvr-shrink {
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.hvr-shrink:hover, .hvr-shrink:focus, .hvr-shrink:active {
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+}
+</style>
