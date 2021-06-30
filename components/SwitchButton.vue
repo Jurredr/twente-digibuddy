@@ -7,13 +7,13 @@
     <div class="flex items-center gap-2 rounded-2xl px-5 py-2 shadow bg-light">
       <p
         class="text-white relative pr-4 text-xl cursor-pointer hvr-grow"
-        @click="selected = 0"
+        @click="selected = 0; $i18n.locale = locale1"
       >
         {{ option1 }}
       </p>
       <p
         class="text-white relative text-xl cursor-pointer hvr-grow"
-        @click="selected = 1"
+        @click="selected = 1; $i18n.locale = locale2"
       >
         {{ option2 }}
       </p>
@@ -34,6 +34,14 @@ export default Vue.extend({
       type: String,
       default: 'Opt2',
     },
+    locale1: {
+      type: String,
+      default: 'nl',
+    },
+    locale2: {
+      type: String,
+      default: 'en',
+    }
   },
   data() {
     return {
