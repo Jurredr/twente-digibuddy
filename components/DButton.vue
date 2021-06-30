@@ -1,6 +1,6 @@
 <template>
   <a
-    class="flex items-center gap-2 rounded-2xl px-4 py-2"
+    class="flex items-center gap-2 rounded-2xl px-4 py-2 shadow"
     :class="selected ? 'bg-white' : 'bg-dark hover:bg-light text-white'"
     v-on="$listeners"
   >
