@@ -20,10 +20,15 @@
           },
         }"
       >
-        <GmapMarker
-          :position="{ lat: 52.21833, lng: 6.89583 }"
-          icon="http://maps.google.com/mapfiles/kml/paddle/purple-blank.png"
-        />
+        <template v-for="marker in markers">
+          <GmapMarker
+            v-if="selectedFilter.matches(marker)"
+            :key="marker.name"
+            :position="{ lat: marker.location[0], lng: marker.location[1] }"
+            :title="marker.name"
+            icon="http://maps.google.com/mapfiles/kml/paddle/purple-blank.png"
+          />
+        </template>
       </GmapMap>
 
       <!-- Help -->
@@ -87,9 +92,9 @@
           v-for="filter in filters"
           :key="filter"
           href="javascript:void(0)"
-          :selected="selected === filter"
-          @click="selected = filter"
-          >{{ filter }}</DButton
+          :selected="selectedFilter === filter"
+          @click="selectedFilter = filter"
+          >{{ filter.name }}</DButton
         >
       </div>
 
@@ -120,13 +125,57 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import type { Marker } from '../assets/api'
 
 export default Vue.extend({
   data() {
+    const filters = [
+      { name: '🙋‍♂️ All', matches: (_: Marker) => true },
+      {
+        name: '🙋‍♂️ Persons',
+        matches: (m: Marker) => m.tags.includes('persons'),
+      },
+      {
+        name: '🙋‍♂️ People',
+        matches: (m: Marker) => m.tags.includes('people'),
+      },
+      {
+        name: '🙋‍♂️ Things',
+        matches: (m: Marker) => m.tags.includes('things'),
+      },
+    ]
+
     return {
       modalShown: true,
-      selected: '🙋‍♂️ All',
-      filters: ['🙋‍♂️ All', '🙋‍♂️ Persons', '🙋‍♂️ People', '🙋‍♂️ Things'],
+      filters,
+      selectedFilter: filters[0],
+      markers: [
+        {
+          name: 'Somewhere',
+          location: [52.20833, 6.89583],
+          tags: ['persons'],
+        },
+        {
+          name: 'Somewhere Else',
+          location: [52.24833, 6.85583],
+          tags: ['people', 'persons'],
+        },
+        {
+          name: 'Nowhere',
+          location: [52.23833, 6.83583],
+          tags: ['things'],
+        },
+        {
+          name: 'What',
+          location: [52.22833, 6.85583],
+          tags: ['persons, things'],
+        },
+        {
+          name: 'Huh',
+          location: [52.21833, 6.89583],
+          tags: ['people', 'things'],
+        },
+      ] as Array<Marker>,
     }
   },
 })
