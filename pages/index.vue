@@ -98,6 +98,9 @@
         >
       </div>
 
+      <!-- Widget Window -->
+      <WidgetWindow class="right-6 bottom-6" />
+
       <!-- Welcome Modal -->
       <div
         v-if="modalShown"
@@ -116,9 +119,6 @@
       >
         <IntroModal @modal-close="modalShown = false" />
       </div>
-
-      <!-- Widget Window -->
-      <WidgetWindow class="right-6 bottom-6" />
     </div>
   </div>
 </template>
