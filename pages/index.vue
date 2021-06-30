@@ -54,7 +54,7 @@
       </GmapMap>
 
       <!-- Help -->
-      <DButton href="#" class="absolute top-6 left-6 text-sm h-11 hvr-grow">
+      <DButton class="absolute top-6 left-6 text-sm h-11 hvr-grow" @click="helpShown = true">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="18.157"
@@ -143,6 +143,25 @@
       >
         <IntroModal @modal-close="modalShown = false" />
       </div>
+
+      <!-- Help Modal -->
+      <div
+        v-if="helpShown"
+        class="
+          absolute
+          top-0
+          left-0
+          w-full
+          h-full
+          bg-black bg-opacity-50
+          flex
+          justify-center
+          items-center
+          shadow
+        "
+      >
+        <HelpModal @modal-close="helpShown = false" />
+      </div>
     </div>
   </div>
 </template>
@@ -174,6 +193,7 @@ export default Vue.extend({
 
     return {
       modalShown: true,
+      helpShown: false,
       filters,
       selectedFilter: filters[0],
       markers: [
