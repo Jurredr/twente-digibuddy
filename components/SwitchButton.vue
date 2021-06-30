@@ -6,13 +6,13 @@
     ></div>
     <div class="flex items-center gap-2 rounded-2xl px-5 py-2 shadow bg-light">
       <p
-        class="text-white relative pr-4 text-xl cursor-pointer"
+        class="text-white relative pr-4 text-xl cursor-pointer hvr-grow"
         @click="selected = 0"
       >
         {{ option1 }}
       </p>
       <p
-        class="text-white relative text-xl cursor-pointer"
+        class="text-white relative text-xl cursor-pointer hvr-grow"
         @click="selected = 1"
       >
         {{ option2 }}

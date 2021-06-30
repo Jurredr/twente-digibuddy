@@ -101,7 +101,7 @@
           gap-11
         "
       >
-        <div class="nav-news cursor-pointer flex justify-center hvr-shrink" @click="currentPage = 0; collapsed = false">
+        <div class="nav-news cursor-pointer flex justify-center hvr-grow" @click="currentPage = 0; collapsed = false">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="19.739"
@@ -120,7 +120,7 @@
             v-if="currentPage === 0" class="select-bubble absolute rounded-full bg-pink h-1 w-1 top-6"
           ></div>
         </div>
-        <div class="nav-profile cursor-pointer flex justify-center hvr-shrink" @click="currentPage = 1; collapsed = false">
+        <div class="nav-profile cursor-pointer flex justify-center hvr-grow" @click="currentPage = 1; collapsed = false">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18.739"
@@ -139,7 +139,7 @@
             v-if="currentPage === 1" class="select-bubble absolute rounded-full bg-pink h-1 w-1 top-6"
           ></div>
         </div>
-        <div class="nav-chat cursor-pointer flex justify-center hvr-shrink" @click="currentPage = 2; collapsed = false">
+        <div class="nav-chat cursor-pointer flex justify-center hvr-grow" @click="currentPage = 2; collapsed = false">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="21.411"
@@ -171,7 +171,7 @@
             v-if="currentPage === 2" class="select-bubble absolute rounded-full bg-pink h-1 w-1 top-6"
           ></div>
         </div>
-        <div class="nav-settings cursor-pointer flex justify-center hvr-shrink" @click="currentPage = 3; collapsed = false">
+        <div class="nav-settings cursor-pointer flex justify-center hvr-grow" @click="currentPage = 3; collapsed = false">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20.354"
