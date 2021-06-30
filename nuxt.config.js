@@ -37,7 +37,7 @@ export default {
     '@nuxtjs/axios',
     [
       'vuejs-google-maps/nuxt',
-      { apiKey: process.env.GOOGLE_MAPS_API_KEY, libraries: [] },
+      { apiKey: 'AIzaSyBtH1MzzE-57t2Xf1PN9dAgwa3XDBm2ufw', libraries: [] },
     ],
   ],
 
