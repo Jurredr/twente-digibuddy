@@ -195,7 +195,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script>
 export default {
   data() {
     return {
@@ -204,7 +204,7 @@ export default {
     }
   },
   methods: {
-    getPageTitle(currentPage: Number) {
+    getPageTitle(currentPage) {
       switch(currentPage) {
         case 0:
           return this.$t('news')
