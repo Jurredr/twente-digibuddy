@@ -87,9 +87,21 @@
         </svg>
       </div>
       <div
-        class="navigation absolute bg-dark rounded-3xl bottom-6 w-10/12 h-12 flex justify-center items-center gap-11"
+        class="
+          navigation
+          absolute
+          bg-dark
+          rounded-3xl
+          bottom-6
+          w-10/12
+          h-12
+          flex
+          justify-center
+          items-center
+          gap-11
+        "
       >
-        <div class="nav-news cursor-pointer">
+        <div class="nav-news cursor-pointer flex justify-center" @click="currentPage = 0">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="19.739"
@@ -104,8 +116,11 @@
               fill="#fff"
             />
           </svg>
+          <div
+            v-if="currentPage === 0" class="select-bubble absolute rounded-full bg-pink h-1 w-1 bottom-2"
+          ></div>
         </div>
-        <div class="nav-profile cursor-pointer">
+        <div class="nav-profile cursor-pointer flex justify-center" @click="currentPage = 1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18.739"
@@ -120,8 +135,11 @@
               fill="#fff"
             />
           </svg>
+          <div
+            v-if="currentPage === 1" class="select-bubble absolute rounded-full bg-pink h-1 w-1 bottom-2"
+          ></div>
         </div>
-        <div class="nav-chat cursor-pointer">
+        <div class="nav-chat cursor-pointer flex justify-center" @click="currentPage = 2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="21.411"
@@ -149,8 +167,11 @@
               />
             </g>
           </svg>
+          <div
+            v-if="currentPage === 2" class="select-bubble absolute rounded-full bg-pink h-1 w-1 bottom-2"
+          ></div>
         </div>
-        <div class="nav-settings cursor-pointer">
+        <div class="nav-settings cursor-pointer flex justify-center" @click="currentPage = 3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20.354"
@@ -165,10 +186,10 @@
               fill="#fff"
             />
           </svg>
+          <div
+            v-if="currentPage === 3" class="select-bubble absolute rounded-full bg-pink h-1 w-1 bottom-2"
+          ></div>
         </div>
-      </div>
-      <div class="select-bubble rounded-full w-2 h-2 bg-white">
-
       </div>
     </div>
   </div>
