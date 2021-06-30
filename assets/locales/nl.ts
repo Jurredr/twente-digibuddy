@@ -12,4 +12,9 @@ export default {
   introFeature2: 'Chat en ontmoet potentiële partners',
   introFeature3: 'Adverteer jezelf en je bedrijf',
   introButton: 'Ontdek',
+
+  helpButton: 'Contacteer',
+  helpHeader: 'Hulp nodig?',
+  helpSubHeader: 'Hier zijn een aantal veel gestelde vragen:',
+  helpUnanswered: 'Nog steeds vragen, of een probleem gevonden?',
 }

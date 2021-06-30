@@ -12,4 +12,9 @@ export default {
   introFeature2: 'Chat and meet with potential partners',
   introFeature3: 'Advertise yourself and your company',
   introButton: 'Explore',
+
+  helpButton: 'Contact',
+  helpHeader: 'In need of help?',
+  helpSubHeader: 'Here are some frequently asked questions:',
+  helpUnanswered: 'Still have questions, or found any issues?',
 }

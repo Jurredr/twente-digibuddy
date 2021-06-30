@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-light rounded-3xl overflow-hidden">
+  <div class="bg-light rounded-3xl overflow-hidden absolute">
     <div
       class="
         bg-dark
@@ -13,6 +13,38 @@
         text-white
       "
     >
+      <div
+        class="
+          minimize-button
+          absolute
+          left-4
+          cursor-pointer
+          rounded-3xl
+          bg-light
+          w-9
+          h-7
+          flex
+          justify-center
+          items-center
+          hvr-grow
+        "
+        @click="$emit('modal-close')"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="15.979"
+          height="15.979"
+          viewBox="0 0 15.979 15.979"
+        >
+          <path
+            id="Icon_material-close"
+            data-name="Icon material-close"
+            d="M23.479,9.109,21.869,7.5l-6.38,6.38L9.109,7.5,7.5,9.109l6.38,6.38L7.5,21.869l1.609,1.609,6.38-6.38,6.38,6.38,1.609-1.609-6.38-6.38Z"
+            transform="translate(-7.5 -7.5)"
+            fill="#fff"
+          />
+        </svg>
+      </div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="32"
@@ -30,10 +62,10 @@
     </div>
     <div class="p-8 flex flex-col items-center">
       <p class="text-white font-semibold text-center text-lg">
-        Welcome to Twente! 🇳🇱
+        {{ $t('helpHeader') }}
       </p>
       <p class="text-gray font-light mt-5 text-center">
-        Discover the digital world of Twente.
+        {{ $t('helpSubHeader') }}
       </p>
       <div class="flex flex-col font-extralight mt-6 gap-4">
         <div class="bg-dark rounded-2xl flex items-center hvr-grow">
@@ -53,27 +85,29 @@
           <p class="text-gray px-5 py-3">Advertise yourself and your company</p>
         </div>
       </div>
+      <p class="text-gray font-light text-center mt-7">
+        {{ $t('helpUnanswered') }}
+      </p>
       <DButton
-        href="javascript:void(0)"
+        href="mailto:info@wired-u.nl"
         class="mt-8 mb-2 font-semibold text-sm text-light px-8 py-3 hvr-grow"
         selected
-        @click="$emit('modal-close')"
       >
-        Explore
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="15.75"
-          height="7.742"
-          viewBox="0 0 15.75 7.742"
+          width="18.131"
+          height="14.246"
+          viewBox="0 0 18.131 14.246"
         >
           <path
-            id="Icon_awesome-long-arrow-alt-right"
-            data-name="Icon awesome-long-arrow-alt-right"
-            d="M11.037,12.723H.422A.422.422,0,0,0,0,13.145v1.969a.422.422,0,0,0,.422.422H11.037v1.619a.844.844,0,0,0,1.44.6L15.5,14.726a.844.844,0,0,0,0-1.193l-3.026-3.026a.844.844,0,0,0-1.44.6Z"
-            transform="translate(0 -10.258)"
+            id="Icon_ionic-md-mail"
+            data-name="Icon ionic-md-mail"
+            d="M18.655,5.625H3.977A1.732,1.732,0,0,0,2.25,7.352V18.144a1.732,1.732,0,0,0,1.727,1.727H18.655a1.732,1.732,0,0,0,1.727-1.727V7.352A1.732,1.732,0,0,0,18.655,5.625Zm-.216,3.669-7.123,4.749L4.193,9.294V7.568l7.123,4.749,7.123-4.749Z"
+            transform="translate(-2.25 -5.625)"
             fill="#2b2a65"
           />
         </svg>
+        {{ $t('helpButton') }}
       </DButton>
     </div>
   </div>
@@ -83,5 +117,4 @@
 export default {}
 </script>
 
-<style>
-</style>
+<style></style>
