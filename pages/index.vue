@@ -25,14 +25,56 @@
         />
       </GmapMap>
       <DButton href="#" class="absolute top-4 left-4">
-        <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
-          <path
-            fill="currentColor"
-            d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z"
-          />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="21.552"
+          height="21.552"
+          viewBox="0 0 21.552 21.552"
+        >
+          <g
+            id="Icon_feather-info"
+            data-name="Icon feather-info"
+            transform="translate(1.5 1.5)"
+          >
+            <path
+              id="Path_1"
+              data-name="Path 1"
+              d="M21.552,12.276A9.276,9.276,0,1,1,12.276,3a9.276,9.276,0,0,1,9.276,9.276Z"
+              transform="translate(-3 -3)"
+              fill="none"
+              stroke="#fff"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="3"
+            />
+            <path
+              id="Path_2"
+              data-name="Path 2"
+              d="M18,21.71V18"
+              transform="translate(-8.724 -8.724)"
+              fill="none"
+              stroke="#fff"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="3"
+            />
+            <path
+              id="Path_3"
+              data-name="Path 3"
+              d="M18,12h0"
+              transform="translate(-8.724 -6.434)"
+              fill="none"
+              stroke="#fff"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="3"
+            />
+          </g>
         </svg>
         Help
       </DButton>
+      <SwitchButton href="#" class="" >
+      </SwitchButton>
       <div class="absolute top-4 right-4 flex gap-4">
         <DButton
           v-for="filter in filters"
@@ -54,7 +96,7 @@ export default Vue.extend({
   data() {
     return {
       selected: 'All',
-      filters: ['All', 'Persons', 'People', 'Things'],
+      filters: ['All', 'Persons', '🙋‍♂️ People', 'Things'],
     }
   },
 })

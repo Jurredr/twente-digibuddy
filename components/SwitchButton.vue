@@ -14,9 +14,11 @@ import Vue from 'vue'
 export default Vue.extend({
   props: {
     selected: {
-      type: Boolean,
-      default: false,
+      type: Number,
+      default: 0,
     },
   },
 })
 </script>
+
+<style></style>
