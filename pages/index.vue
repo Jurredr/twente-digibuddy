@@ -94,7 +94,10 @@
           href="javascript:void(0)"
           :selected="selectedFilter === filter"
           @click="selectedFilter = filter"
-          >{{ filter.name }}</DButton
+          >
+          <p>{{ filter.icon }}</p>
+          <p class="text-sm ml-1">{{ filter.name }}</p>
+          </DButton
         >
       </div>
 
@@ -130,17 +133,17 @@ import type { Marker } from '../assets/api'
 export default Vue.extend({
   data() {
     const filters = [
-      { name: '🙋‍♂️ All', matches: (_: Marker) => true },
+      { name: 'All', icon: '🙋‍♂️', matches: (_: Marker) => true },
       {
-        name: '🙋‍♂️ Persons',
+        name: 'Persons', icon: '🙋‍♂️',
         matches: (m: Marker) => m.tags.includes('persons'),
       },
       {
-        name: '🙋‍♂️ People',
+        name: 'People',  icon: '🙋‍♂️',
         matches: (m: Marker) => m.tags.includes('people'),
       },
       {
-        name: '🙋‍♂️ Things',
+        name: 'Things',  icon: '🙋‍♂️',
         matches: (m: Marker) => m.tags.includes('things'),
       },
     ]
