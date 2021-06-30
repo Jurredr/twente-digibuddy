@@ -22,20 +22,23 @@
       >
         <GmapInfoWindow :position="{ lat: 52.21833, lng: 6.89583 }">
           <div class="font-montserrat text-base px-4 py-2">
-            <p class="font-bold mb-2">Chris is looking for people!</p>
-            <p><span class="font-semibold mr-2">Where</span>At the station</p>
+            <p class="font-bold mb-2">1Twente</p>
+            <p>
+              <span class="font-semibold mr-2">Industry</span>Broadcast Media
+            </p>
             <p class="mb-2">
-              <span class="font-semibold mr-2">When</span>now - 18:00
+              <span class="font-semibold mr-2">Website</span
+              ><a class="text-pink underline" href="https://www.1twente.nl"
+                >https://www.1twente.nl</a
+              >
             </p>
             <p class="max-w-sm mb-4">
-              Hi y'all! Looking to make tonight a fun night! Going out to some
-              places to grab a drink / have something to eat. You can join us if
-              you want! Don't know us? Don't worry! We're an accepting group of
-              people :)
+              Bij 1Twente hoor en zie je dagelijks de laatste actualiteiten uit
+              Twente. Wij zijn te vinden op televisie, radio en online.
             </p>
             <div class="flex gap-2">
-              <DButton>I'll be there!</DButton>
-              <DButton>Chat about this</DButton>
+              <DButton>Show connections</DButton>
+              <DButton>Doe iets anders leuks</DButton>
             </div>
           </div>
         </GmapInfoWindow>
