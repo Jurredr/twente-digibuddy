@@ -183,7 +183,7 @@ export default Vue.extend({
           tags: ['persons'],
         },
         {
-          name: 'Somewhere Else',
+          name: 'Somewhere else',
           location: [52.24833, 6.85583],
           tags: ['people', 'persons'],
         },
