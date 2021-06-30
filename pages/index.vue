@@ -20,6 +20,25 @@
           },
         }"
       >
+        <GmapInfoWindow :position="{ lat: 52.21833, lng: 6.89583 }">
+          <div class="font-montserrat text-base px-4 py-2">
+            <p class="font-bold mb-2">Chris is looking for people!</p>
+            <p><span class="font-semibold mr-2">Where</span>At the station</p>
+            <p class="mb-2">
+              <span class="font-semibold mr-2">When</span>now - 18:00
+            </p>
+            <p class="max-w-sm mb-4">
+              Hi y'all! Looking to make tonight a fun night! Going out to some
+              places to grab a drink / have something to eat. You can join us if
+              you want! Don't know us? Don't worry! We're an accepting group of
+              people :)
+            </p>
+            <div class="flex gap-2">
+              <DButton>I'll be there!</DButton>
+              <DButton>Chat about this</DButton>
+            </div>
+          </div>
+        </GmapInfoWindow>
         <template v-for="marker in markers">
           <GmapMarker
             v-if="selectedFilter.matches(marker)"
@@ -94,11 +113,10 @@
           href="javascript:void(0)"
           :selected="selectedFilter === filter"
           @click="selectedFilter = filter"
-          >
+        >
           <p>{{ filter.icon }}</p>
           <p class="text-sm ml-1">{{ filter.name }}</p>
-          </DButton
-        >
+        </DButton>
       </div>
 
       <!-- Widget Window -->
@@ -135,15 +153,18 @@ export default Vue.extend({
     const filters = [
       { name: 'All', icon: '🙋‍♂️', matches: (_: Marker) => true },
       {
-        name: 'Persons', icon: '🙋‍♂️',
+        name: 'Persons',
+        icon: '🙋‍♂️',
         matches: (m: Marker) => m.tags.includes('persons'),
       },
       {
-        name: 'People',  icon: '🙋‍♂️',
+        name: 'People',
+        icon: '🙋‍♂️',
         matches: (m: Marker) => m.tags.includes('people'),
       },
       {
-        name: 'Things',  icon: '🙋‍♂️',
+        name: 'Things',
+        icon: '🙋‍♂️',
         matches: (m: Marker) => m.tags.includes('things'),
       },
     ]
