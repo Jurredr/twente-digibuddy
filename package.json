@@ -2,6 +2,13 @@
   "name": "twente-digibuddy",
   "version": "1.0.0",
   "private": true,
+  "description": "Putting digital Twente on the map!",
+  "keywords": [
+    "Twente",
+    "Digital",
+    "Digibuddy"
+  ],
+  "author": "Chris Bleeker & Jurre de Ruiter",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
