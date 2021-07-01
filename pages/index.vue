@@ -274,7 +274,6 @@ export default Vue.extend({
 <style>
 /* Import custom fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
-@import url(https://db.onlinewebfonts.com/c/5ab304ade0d4f62d027d12464ca69443?family=Apple+Color+Emoji);
 
 /* Import custom styles */
 @import url('../assets/styles/custom.scss');
