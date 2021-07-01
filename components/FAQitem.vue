@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="bg-dark flex items-center cursor-pointer"
+      class="bg-dark flex items-center hover:bg-lighter transition-all cursor-pointer"
       :class="collapsed ? 'rounded-2xl' : 'rounded-t-2xl'"
       @click="collapsed = !collapsed"
     >
