@@ -212,7 +212,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import type { Marker } from '../assets/types/api'
+import type { ApiCompany, Marker } from '../assets/types/api'
 
 export default Vue.extend({
   data() {
@@ -243,40 +243,29 @@ export default Vue.extend({
       selectedMarker: null,
       infoWindowShown: false,
       showConnections: true,
-      markers: [
-        {
-          name: 'Somewhere',
-          location: [52.20833, 6.89583],
-          tags: ['persons'],
-        },
-        {
-          name: 'Somewhere else',
-          location: [52.24833, 6.85583],
-          tags: ['people', 'persons'],
-        },
-        {
-          name: 'Nowhere',
-          location: [52.23833, 6.83583],
-          tags: ['things'],
-        },
-        {
-          name: 'What',
-          location: [52.22833, 6.85583],
-          tags: ['persons, things'],
-        },
-        {
-          name: 'Huh',
-          location: [52.21833, 6.89583],
-          tags: ['people', 'things'],
-        },
-      ] as Array<Marker>,
+      markers: [] as Array<Marker>,
     }
+  },
+  async fetch() {
+    const response = (await this.$axios.$get(
+      '/api/companies'
+    )) as Array<ApiCompany>
+
+    this.markers = [
+      ...response.map((c) => ({
+        name: c.name,
+        location: [c.bubbleLatitude, c.bubbleLongtitude],
+        tags: [],
+        company: c,
+      })),
+    ]
   },
   methods: {
     hasConnection(_m1: Marker, _m2: Marker) {
       return true
     },
   },
+  fetchOnServer: false,
 })
 </script>
 
