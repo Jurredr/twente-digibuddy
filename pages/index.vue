@@ -5,16 +5,16 @@
       <GmapMap
         class="w-full h-full"
         :center="{ lat: 52.21833, lng: 6.89583 }"
-        :zoom="1"
+        :zoom="12.5"
         :options="{
           mapId: '42c056fc8fd3543',
           disableDefaultUI: true,
           restriction: {
             latLngBounds: {
-              north: 52.25975249383111,
-              south: 52.17603712615544,
-              east: 6.992454528808594,
-              west: 6.794700622558593,
+              north: 52.30975249383111,
+              south: 52.10603712615544,
+              east: 7.052454528808594,
+              west: 6.744700622558593,
             },
             strictBounds: false,
           },
