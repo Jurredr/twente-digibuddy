@@ -26,7 +26,11 @@
             :key="marker.name"
             :position="{ lat: marker.location[0], lng: marker.location[1] }"
             :title="marker.name"
-            :icon="selectedMarker === marker ? '/markers/marker-default-selected.svg' : '/markers/marker-default.svg'"
+            :icon="
+              selectedMarker === marker
+                ? '/markers/marker-default-selected.svg'
+                : '/markers/marker-default.svg'
+            "
             @click="
               selectedMarker = marker
               infoWindowShown = true
@@ -70,12 +74,24 @@
               selectedMarker = null
             "
           >
-            <div class="font-montserrat text-base px-4 py-2">
-              <p class="font-bold mb-2">{{ selectedMarker.name }}</p>
-              <div class="flex gap-2">
-                <DButton>Show connections</DButton>
-                <DButton>Doe iets anders leuks</DButton>
+            <div
+              class="font-montserrat text-base bg-light rounded-3xl shadow p-8"
+            >
+              <div class="flex gap-4 items-stretch">
+                <div class="w-20 h-20 bg-white rounded-2xl" />
+                <div class="flex flex-col justify-between">
+                  <p class="font-semibold text-white">Combidesk</p>
+                  <p class="text-sm font-semibold text-pink">App Development</p>
+                  <p class="text-gray">
+                    0.3 km ·
+                    <a class="underline" href="#">Hengelosestraat 500</a>
+                  </p>
+                </div>
               </div>
+              <p class="mt-4 max-w-xs text-sm text-white">
+                Combidesk combines and links software packages using our custom
+                website platform.
+              </p>
             </div>
           </GmapInfoWindow>
         </template>
