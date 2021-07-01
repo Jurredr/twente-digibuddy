@@ -14,7 +14,7 @@
       <div class="w-20 h-20 bg-white rounded-3xl" />
       <div class="flex flex-col justify-between">
         <p class="font-bold text-white flex gap-2 items-center">
-          {{ marker.name }}
+          {{ marker.company.name }}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="9.226"
@@ -30,16 +30,17 @@
             />
           </svg>
         </p>
-        <p class="text-sm font-semibold text-pink">App Development</p>
+        <p class="text-sm font-semibold text-pink">
+          {{ marker.company.industry }}
+        </p>
         <p class="text-sm text-gray">
           0.3 km ·
-          <a class="underline" href="#">Hengelosestraat 500</a>
+          <a class="underline" href="#">{{ marker.company.address }}</a>
         </p>
       </div>
     </div>
     <p class="mt-4 max-w-xs text-sm text-white">
-      Combidesk combines and links software packages using our custom website
-      platform.
+      {{ marker.company.about }}
     </p>
 
     <div
@@ -54,7 +55,7 @@
       "
     >
       <a
-        href="#"
+        :href="marker.company.website"
         class="
           px-2
           py-2
@@ -155,7 +156,7 @@
         {{ $t('infoChat') }}
       </a>
       <a
-        href="#"
+        :href="marker.company.linkedinUrl"
         class="
           px-2
           py-2
@@ -267,21 +268,29 @@
         </a>
         <div class="mt-4 bg-midDark rounded-t-3xl flex justify-center gap-8">
           <div class="mt-5 mb-5">
-            <InfoFeature icon="💼" :name="$t('infoEmployees')" value="16" />
+            <InfoFeature
+              icon="💼"
+              :name="$t('infoEmployees')"
+              :value="marker.company.companySize"
+            />
             <InfoFeature
               class="mt-3"
               icon="👥"
               :name="$t('infoConnections')"
-              value="4"
+              value="???"
             />
           </div>
           <div class="mt-5 mb-5">
-            <InfoFeature icon="⌛️" :name="$t('infoFounded')" value="2016" />
+            <InfoFeature
+              icon="⌛️"
+              :name="$t('infoFounded')"
+              :value="marker.company.founded"
+            />
             <InfoFeature
               class="mt-3"
               icon="🗺"
               :name="$t('infoCity')"
-              value="Enschede"
+              :value="marker.company.headquartersCity"
             />
           </div>
         </div>
