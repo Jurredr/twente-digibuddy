@@ -14,7 +14,7 @@
       <div class="w-20 h-20 bg-white rounded-3xl" />
       <div class="flex flex-col justify-between">
         <p class="font-bold text-white flex gap-2 items-center">
-          {{ marker.company.name }}
+          {{ marker.company ? marker.company.name : marker.person.name }}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="9.226"
@@ -31,16 +31,24 @@
           </svg>
         </p>
         <p class="text-sm font-semibold text-pink">
-          {{ marker.company.industry }}
+          {{
+            marker.company ? marker.company.industry : 'Looking for partners'
+          }}
         </p>
         <p class="text-sm text-gray">
           0.3 km ·
-          <a class="underline" href="#">{{ marker.company.address }}</a>
+          <a class="underline" href="#">{{
+            marker.company ? marker.company.address : 'Hengelosestraat 500'
+          }}</a>
         </p>
       </div>
     </div>
     <p class="mt-4 max-w-xs text-sm text-white">
-      {{ marker.company.about }}
+      {{
+        marker.company
+          ? marker.company.about
+          : "I'm am looking for a partner to collaborate with on a new project for my company"
+      }}
     </p>
 
     <div
@@ -55,7 +63,7 @@
       "
     >
       <a
-        :href="marker.company.website"
+        :href="marker.company ? marker.company.website : '#'"
         class="
           px-2
           py-2
@@ -156,7 +164,7 @@
         {{ $t('infoChat') }}
       </a>
       <a
-        :href="marker.company.linkedinUrl"
+        :href="marker.company ? marker.company.linkedinUrl : '#'"
         class="
           px-2
           py-2
@@ -231,7 +239,7 @@
         </div>
       </a>
     </div>
-    <div v-if="!marker.tags.includes('persons')">
+    <div v-if="marker.company">
       <template v-if="showMore" class="flex justify-center">
         <a
           href="javascript:void(0)"
@@ -532,8 +540,16 @@
         rounded-3xl
       "
     >
-      <InfoFeature icon="💼" :name="$t('infoCompany')" value="JurreBV" />
-      <InfoFeature icon="🛠" :name="$t('infoPosition')" value="CEO" />
+      <InfoFeature
+        icon="💼"
+        :name="$t('infoCompany')"
+        :value="marker.person.company"
+      />
+      <InfoFeature
+        icon="🛠"
+        :name="$t('infoPosition')"
+        :value="marker.person.position"
+      />
     </div>
   </div>
 </template>
