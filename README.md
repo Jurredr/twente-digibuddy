@@ -1,6 +1,32 @@
-# twente-digibuddy
+![image](https://user-images.githubusercontent.com/62119716/124087389-3d90b800-da52-11eb-867a-e76ac4c7bebc.png)
+
+***By [Jurre de Ruiter](https://github.com/jurredr) & [Chris Bleeker](https://github.com/SlagHoedje/)***
+
+## About
+How do we put digital Twente on the map? A question that is not easily answered, but we gave it our best shot!
+
+### Solution
+We have developed a dynamically rendered SPA (Single-Page-Application) using [NuxtJS](https://nuxtjs.org/). This web application mainly consists of a neat user-interface, showing a complete map of Twente. Using various tools and actions, the user can discover Twente by moving around on the map, and checking out markers of companies. Companies can be filtered and checked out by clicking on a marker and going through all kinds of interesting data. Companies can have connections, and so can users/persons. Some conceptual systems include (but are not limited to):
+
+- **Welcome pop-up**, a nice warm welcome, quickly telling the user what they can use the application for.
+- **Help window**, a quick way to get in contact or view FAQs.
+- **Language switcher**, Twente is a place filled with internationals, amongst whom a lot of students. By providing the option to quickly change the application to English, a bigger audience will be attracted.
+- **Filters**, in the top right there are a few easy-to-access filters, that provide a way for the user to find what they're looking for.
+- **News page**, showing the latest news of the digital world of Twente.
+- **Profile page**, allowing the user to authenticate using Google's OAuth. By doing this, we can utilize the various API systems that Google offers, allowing us to (for example) get data from Google Businesses, validate them, and allow users to add their companies themselves. This makes for huge scalability and little maintenance (which of course could easily be added through admin-accounts).
+- **Chat page**, it might be nice to offer users the opportunity to directly link up with other individuals, or companies to partner up. This would be an addition to social media links, and could maintain a remaining sense of interest in the application.
+- **Settings page**, where the user can customize their experience within the application.
+
+### Images
+<img width="70%" height="70%" src="https://user-images.githubusercontent.com/62119716/124089969-b3961e80-da54-11eb-9d8f-d3164ed3637e.png" alt="preview1" />
+<img width="70%" height="70%" src="https://user-images.githubusercontent.com/62119716/124090102-d1638380-da54-11eb-9d52-7393102d615d.png" alt="preview2" />
+<img width="70%" height="70%" src="https://user-images.githubusercontent.com/62119716/124090183-e04a3600-da54-11eb-89f5-7ec19343df53.png" alt="preview3" />
+
 
 ## Build Setup
+Want to run or build the project?
+
+Simply clone the project, and use one of the following Yarn commands:
 
 ```bash
 # install dependencies
@@ -16,54 +42,3 @@ $ yarn start
 # generate static project
 $ yarn generate
 ```
-
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
-
-## Special Directories
-
-You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
-
-### `assets`
-
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
-
-### `components`
-
-The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
-
-### `layouts`
-
-Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
-
-
-### `pages`
-
-This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
-
-### `plugins`
-
-The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
-
-### `static`
-
-This directory contains your static files. Each file inside this directory is mapped to `/`.
-
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
-
-### `store`
-
-This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
