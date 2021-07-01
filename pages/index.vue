@@ -65,7 +65,10 @@
                 height: -35,
               },
             }"
-            @closeclick="infoWindowShown = false"
+            @closeclick="
+              infoWindowShown = false
+              selectedMarker = null
+            "
           >
             <div class="font-montserrat text-base px-4 py-2">
               <p class="font-bold mb-2">{{ selectedMarker.name }}</p>
@@ -261,7 +264,7 @@ export default Vue.extend({
     }
   },
   methods: {
-    hasConnection(m1: Marker, m2: Marker) {
+    hasConnection(_m1: Marker, _m2: Marker) {
       return true
     },
   },
