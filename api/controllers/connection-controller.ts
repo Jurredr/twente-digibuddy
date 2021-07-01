@@ -1,3 +1,5 @@
+import connections from '../models/connection-model'
+
 async function createConnection(
   company1: String,
   company2: String,

@@ -1,14 +1,49 @@
+import persons from '../models/person-model'
+
 async function createPerson(
   name: String,
   position: String,
   company: String,
-  bubble_latitude: Number,
-  bubble_longtitude: Number
-) {}
+  bubbleLatitude: Number,
+  bubbleLongtitude: Number
+) {
+  return await persons
+    .create({
+      name,
+      position,
+      company,
+      bubbleLatitude,
+      bubbleLongtitude,
+    })
+    .then((data) => {
+      return data
+    })
+    .catch((error: Error) => {
+      throw error
+    })
+}
 
-async function getPersons() {}
+async function getPersons() {
+  await persons
+    .find({})
+    .then((personsList) => {
+      return personsList
+    })
+    .catch((error: Error) => {
+      throw error
+    })
+}
 
-async function getPerson(name: String) {}
+async function getPerson(name: String) {
+  return await persons
+    .findOne({ name })
+    .then((data) => {
+      return data
+    })
+    .catch((error: Error) => {
+      throw error
+    })
+}
 
 export default {
   createPerson,
