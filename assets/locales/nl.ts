@@ -27,4 +27,10 @@ export default {
   infoWebsite: 'Website',
   infoChat: 'Chat',
   infoConnections: 'Connecties',
+  infoCompany: 'Bedrijf',
+  infoPosition: 'Positie',
+  infoEmployees: 'Werknemers',
+  infoCity: 'Stad',
+  infoFounded: 'Opgericht',
+  infoComparable: 'Vergelijkbaar met:',
 }

@@ -27,4 +27,10 @@ export default {
   infoWebsite: 'Website',
   infoChat: 'Chat',
   infoConnections: 'Connections',
+  infoCompany: 'Company',
+  infoPosition: 'Position',
+  infoEmployees: 'Employees',
+  infoCity: 'City',
+  infoFounded: 'Founded',
+  infoComparable: 'Comparable with:',
 }
