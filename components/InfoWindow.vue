@@ -267,16 +267,16 @@
         </a>
         <div class="mt-4 bg-midDark rounded-t-3xl flex justify-center gap-8">
           <div class="mt-5 mb-5">
-            <InfoFeature icon="💼" name="Employees" value="16" />
-            <InfoFeature class="mt-3" icon="👥" name="Connections" value="4" />
+            <InfoFeature icon="💼" :name="$t('infoEmployees')" value="16" />
+            <InfoFeature class="mt-3" icon="👥" :name="$t('infoConnections')" value="4" />
           </div>
           <div class="mt-5 mb-5">
-            <InfoFeature icon="⌛️" name="Founded" value="2016" />
-            <InfoFeature class="mt-3" icon="🗺" name="City" value="Enschede" />
+            <InfoFeature icon="⌛️" :name="$t('infoFounded')" value="2016" />
+            <InfoFeature class="mt-3" icon="🗺" :name="$t('infoCity')" value="Enschede" />
           </div>
         </div>
         <div class="bg-pink rounded-b-3xl flex justify-center items-center">
-          <p class="text-xs text-white font-semibold pr-3">Comparable with</p>
+          <p class="text-xs text-white font-semibold pr-3">{{ $t('infoComparable') }}</p>
           <div class="flex mt-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -499,8 +499,8 @@
       </a>
     </div>
     <div v-else class="flex mt-4 p-3 justify-center items-center gap-10 bg-midDark rounded-3xl">
-      <InfoFeature icon="💼" name="Company" value="JurreBV" />
-      <InfoFeature icon="🛠" name="Position" value="CEO" />
+      <InfoFeature icon="💼" :name="$t('infoCompany')" value="JurreBV" />
+      <InfoFeature icon="🛠" :name="$t('infoPosition')" value="CEO" />
     </div>
   </div>
 </template>
