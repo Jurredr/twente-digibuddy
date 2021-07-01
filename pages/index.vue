@@ -43,7 +43,10 @@
           <template v-if="showConnections">
             <template v-for="connection in markers">
               <GmapPolyline
-                v-if="hasConnection(selectedMarker, connection)"
+                v-if="
+                  selectedFilter.matches(connection) &&
+                  hasConnection(selectedMarker, connection)
+                "
                 :key="connection.name"
                 :editable="false"
                 :path="[
