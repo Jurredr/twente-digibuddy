@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink" width="61" height="73.519" viewBox="0 0 61 73.519">
+  <defs>
+    <filter id="Union_1" x="0" y="0" width="61" height="73.519" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="marker-person" transform="translate(-831 -388)">
+    <g transform="matrix(1, 0, 0, 1, 831, 388)" filter="url(#Union_1)">
+      <path id="Union_1-2" data-name="Union 1" d="M17.752,53.156,11.136,42.5A15.006,15.006,0,0,1,0,28V15A15,15,0,0,1,15,0H28A15,15,0,0,1,43,15V28a15.006,15.006,0,0,1-9.9,14.109L26.249,53.156a5,5,0,0,1-8.5,0Z" transform="translate(9 6)" fill="#fff"/>
+    </g>
+    <text id="_" data-name="🙋‍♂️" transform="translate(851 423)" fill="#b1b9c3" font-size="21" font-family="AppleColorEmoji, Apple Color Emoji">
+      <tspan x="0" y="0">🙋‍♂️</tspan>
+    </text>
+  </g>
+</svg>

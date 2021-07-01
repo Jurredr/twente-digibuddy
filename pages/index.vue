@@ -26,7 +26,7 @@
             :key="marker.name"
             :position="{ lat: marker.location[0], lng: marker.location[1] }"
             :title="marker.name"
-            icon="http://maps.google.com/mapfiles/kml/paddle/purple-blank.png"
+            :icon="selectedMarker === marker ? '/markers/marker-default-selected.svg' : '/markers/marker-default.svg'"
             @click="
               selectedMarker = marker
               infoWindowShown = true
