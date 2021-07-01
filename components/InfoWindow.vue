@@ -11,7 +11,20 @@
     "
   >
     <div class="flex gap-4 items-stretch">
-      <div class="w-20 h-20 bg-white rounded-3xl" />
+      <div
+        class="
+          w-20
+          h-20
+          bg-white
+          rounded-3xl
+          flex
+          items-center
+          justify-center
+          text-3xl
+        "
+      >
+        {{ getIconLink() }}
+      </div>
       <div class="flex flex-col justify-between">
         <p class="font-bold text-white flex gap-2 items-center">
           {{ marker.company ? marker.company.name : marker.person.name }}
@@ -576,6 +589,38 @@ export default Vue.extend({
     return {
       showMore: false,
     }
+  },
+  methods: {
+    getIconLink() {
+      const switchItem =
+        this.marker.person != null ? 'Person' : this.marker.company?.industry
+      switch (switchItem) {
+        case 'Person':
+          return '🙋‍♂️'
+        case 'E-Learning':
+          return '🎓'
+        case 'Computer Software':
+          return '💻'
+        case 'Telecommunication':
+        case 'Telecommunications':
+          return '📞'
+        case 'Marketing & Advertising':
+          return '📈'
+        case 'Broadcast Media':
+        case 'Online Media':
+          return '🎥'
+        case 'Publishing':
+          return '📚'
+        case 'Graphic Design':
+          return '🎨'
+        case 'Internet':
+          return '🌐'
+        case 'Information Technology':
+          return '🤖'
+        default:
+          return '💼'
+      }
+    },
   },
 })
 </script>
