@@ -14,12 +14,15 @@ router.post('/companies', async (req: Request, res: Response) => {
     req.body.data.founded,
     req.body.data.headquarters_city,
     req.body.data.address,
-    req.body.data.comparable
-  ).then(() => {
-    res.send('Successfully added company')
-  }).catch((error: Error) => {
-    return res.status(400).send(error)
-  })
+    req.body.data.bubble_latitude,
+    req.body.data.bubble_longtitude
+  )
+    .then(() => {
+      res.send('Successfully added company')
+    })
+    .catch((error: Error) => {
+      return res.status(400).send(error)
+    })
 })
 
 router.get('/companies', async (res: Response) => {

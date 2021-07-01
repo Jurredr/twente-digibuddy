@@ -40,8 +40,12 @@ const companySchema = new Schema(
       type: String,
       required: false,
     },
-    comparable: {
-      type: String,
+    bubble_latitude: {
+      type: Number,
+      required: false,
+    },
+    bubble_longtitude: {
+      type: Number,
       required: false,
     },
   },
