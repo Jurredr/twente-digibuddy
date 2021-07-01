@@ -167,7 +167,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import type { Marker } from '../assets/api'
+import type { Marker } from '../assets/types/api'
 
 export default Vue.extend({
   data() {
