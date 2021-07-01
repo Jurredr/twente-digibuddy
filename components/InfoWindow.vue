@@ -100,7 +100,7 @@
             />
           </g>
         </svg>
-        Website
+        {{ $t('infoWebsite') }}
       </a>
       <a
         href="#"
@@ -141,7 +141,7 @@
             />
           </g>
         </svg>
-        Chat
+        {{ $t('infoChat') }}
       </a>
       <a
         href="#"
@@ -215,7 +215,7 @@
               />
             </g>
           </svg>
-          Connections
+          {{ $t('infoConnections') }}
         </div>
       </a>
     </div>

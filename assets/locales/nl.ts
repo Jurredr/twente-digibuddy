@@ -23,4 +23,8 @@ export default {
   helpA1: 'Door middel van de filters rechtsbovenin!',
   helpA2: 'Selecteer een bedrijf en klik het 💬 icoon!',
   helpA3: 'Log in en voeg het toe vanuit Profiel!',
+
+  infoWebsite: 'Website',
+  infoChat: 'Chat',
+  infoConnections: 'Connecties',
 }

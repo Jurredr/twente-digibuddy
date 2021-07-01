@@ -23,4 +23,8 @@ export default {
   helpA1: 'By using the filters in the top-right!',
   helpA2: 'Just select a company and click the 💬 icon!',
   helpA3: 'Sign-in and add it through Profile!',
+
+  infoWebsite: 'Website',
+  infoChat: 'Chat',
+  infoConnections: 'Connections',
 }
