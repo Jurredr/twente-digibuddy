@@ -20,7 +20,7 @@ async function createConnection(
 }
 
 async function getConnections(company: String) {
-  await connections
+  return await connections
     .find({ company1: company })
     .then(async (personsList) => {
       await connections.find({ company2: company }).then((personsList2) => {

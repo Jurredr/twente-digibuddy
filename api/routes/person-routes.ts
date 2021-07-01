@@ -8,8 +8,8 @@ router.post('/persons', async (req: Request, res: Response) => {
     req.body.data.name,
     req.body.data.position,
     req.body.data.company,
-    req.body.data.bubble_latitude,
-    req.body.data.bubble_longtitude
+    req.body.data.bubbleLatitude,
+    req.body.data.bubbleLongtitude
   )
     .then(() => {
       res.send('Successfully added person')
@@ -19,7 +19,7 @@ router.post('/persons', async (req: Request, res: Response) => {
     })
 })
 
-router.get('/persons', async (res: Response) => {
+router.get('/persons', async (_req: Request, res: Response) => {
   await PersonController.getPersons()
     .then((persons) => {
       res.send(persons)

@@ -16,11 +16,11 @@ const personSchema = new Schema(
       type: String,
       required: false,
     },
-    bubble_latitude: {
+    bubbleLatitude: {
       type: Number,
       required: false,
     },
-    bubble_longtitude: {
+    bubbleLongtitude: {
       type: Number,
       required: false,
     },

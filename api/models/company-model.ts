@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 
 const companySchema = new Schema(
   {
-    linkedin_url: {
+    linkedinUrl: {
       type: String,
       required: true,
       unique: true,
@@ -12,7 +12,7 @@ const companySchema = new Schema(
       type: String,
       required: true,
     },
-    company_size: {
+    companySize: {
       type: String,
       required: false,
     },
@@ -32,7 +32,7 @@ const companySchema = new Schema(
       type: String,
       required: false,
     },
-    headquarters_city: {
+    headquartersCity: {
       type: String,
       required: false,
     },
@@ -40,11 +40,11 @@ const companySchema = new Schema(
       type: String,
       required: false,
     },
-    bubble_latitude: {
+    bubbleLatitude: {
       type: Number,
       required: false,
     },
-    bubble_longtitude: {
+    bubbleLongtitude: {
       type: Number,
       required: false,
     },

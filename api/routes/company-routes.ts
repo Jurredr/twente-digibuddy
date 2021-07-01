@@ -5,17 +5,17 @@ const router = Router()
 
 router.post('/companies', async (req: Request, res: Response) => {
   await CompanyController.createCompany(
-    req.body.data.linkedin_url,
+    req.body.data.linkedinUrl,
     req.body.data.name,
-    req.body.data.company_size,
+    req.body.data.companySize,
     req.body.data.industry,
     req.body.data.about,
     req.body.data.website,
     req.body.data.founded,
-    req.body.data.headquarters_city,
+    req.body.data.headquartersCity,
     req.body.data.address,
-    req.body.data.bubble_latitude,
-    req.body.data.bubble_longtitude
+    req.body.data.bubbleLatitude,
+    req.body.data.bubbleLongtitude
   )
     .then(() => {
       res.send('Successfully added company')
@@ -25,10 +25,10 @@ router.post('/companies', async (req: Request, res: Response) => {
     })
 })
 
-router.get('/companies', async (res: Response) => {
+router.get('/companies', async (_req: Request, res: Response) => {
   await CompanyController.getCompanies()
-    .then((company) => {
-      res.send(company)
+    .then((companyList) => {
+      res.send(companyList)
     })
     .catch((error: Error) => {
       return res.status(400).send(error)

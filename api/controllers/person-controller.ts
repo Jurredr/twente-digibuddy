@@ -24,7 +24,7 @@ async function createPerson(
 }
 
 async function getPersons() {
-  await persons
+  return await persons
     .find({})
     .then((personsList) => {
       return personsList

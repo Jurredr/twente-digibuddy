@@ -1,7 +1,7 @@
 import companies from '../models/company-model'
 
 async function createCompany(
-  linkedinUrl: String,
+  linkedinUrl: string,
   name: String,
   companySize: String,
   industry: String,
@@ -13,6 +13,7 @@ async function createCompany(
   bubbleLatitude: Number,
   bubbleLongtitude: Number
 ) {
+  linkedinUrl = encodeURIComponent(linkedinUrl)
   return await companies
     .create({
       linkedinUrl,
@@ -36,7 +37,7 @@ async function createCompany(
 }
 
 async function getCompanies() {
-  await companies
+  return await companies
     .find({})
     .then((companyList) => {
       return companyList
