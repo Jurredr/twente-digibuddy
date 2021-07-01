@@ -6,7 +6,7 @@
 How do we put digital Twente on the map? A question that is not easily answered, but we gave it our best shot!
 
 ### Solution
-We have developed a dynamically rendered SPA (Single-Page-Application) using [NuxtJS](https://nuxtjs.org/). This web application mainly consists of a neat user-interface, showing a complete map of Twente. Using various tools and actions, the user can discover Twente by moving around on the map, and checking out markers of companies. Companies can be filtered and checked out by clicking on a marker and going through all kinds of interesting data. Companies can have connections, and so can users/persons. Some conceptual systems include (but are not limited to):
+We have developed a dynamically rendered SPA (Single-Page-Application) using [NuxtJS](https://nuxtjs.org/). This web application is fully responsive for all sorts of devices, like mobile, tablets, and desktop. It mainly consists of a neat user-interface, showing a complete map of Twente. Using various tools and actions, the user can discover Twente by moving around on the map, and checking out markers of companies. Companies can be filtered and checked out by clicking on a marker and going through all kinds of interesting data. Companies can have connections, and so can users/persons. Some conceptual systems include (but are not limited to):
 
 - **Welcome pop-up**, a nice warm welcome, quickly telling the user what they can use the application for.
 - **Help window**, a quick way to get in contact or view FAQs.
