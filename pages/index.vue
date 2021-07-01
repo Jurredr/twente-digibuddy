@@ -77,7 +77,11 @@
               selectedMarker = null
             "
           >
-            <InfoWindow :marker="selectedMarker" />
+            <InfoWindow
+              :marker="selectedMarker"
+              :show-connections="showConnections"
+              @toggleConnections="showConnections = !showConnections"
+            />
           </GmapInfoWindow>
         </template>
       </GmapMap>

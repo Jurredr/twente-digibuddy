@@ -33,7 +33,7 @@
         href="javascript:void(0)"
         class="px-2 py-2"
         :class="showConnections ? 'bg-light rounded-2xl' : ''"
-        @click="showConnections = !showConnections"
+        @click="$emit('toggleConnections')"
       >
         Connections
       </a>
@@ -42,7 +42,7 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue, { PropType } from 'vue'
 import type { Marker } from '~/assets/types/api'
 
 export default Vue.extend({
@@ -50,6 +50,10 @@ export default Vue.extend({
     marker: {
       type: Object as PropType<Marker>,
       required: true,
+    },
+    showConnections: {
+      type: Boolean,
+      default: false,
     },
   },
 })
