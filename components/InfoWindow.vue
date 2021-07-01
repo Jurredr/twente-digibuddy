@@ -48,7 +48,7 @@
       {{
         marker.company
           ? marker.company.about
-          : "I am looking for a partner to collaborate with on a new project for my company"
+          : 'I am looking for a partner to collaborate with on a new project for my company'
       }}
     </p>
 
@@ -162,10 +162,12 @@
             />
           </g>
         </svg>
-        {{ $t('infoChat') }}
+        {{ $t('infoChat') }}x
       </a>
       <a
-        :href="marker.company ? marker.company.linkedinUrl : '#'"
+        :href="
+          marker.company ? decodeURIComponent(marker.company.linkedinUrl) : '#'
+        "
         class="
           px-2
           py-2
