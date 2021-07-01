@@ -21,6 +21,8 @@ We have developed a dynamically rendered SPA (Single-Page-Application) using [Nu
 <img width="70%" height="70%" src="https://user-images.githubusercontent.com/62119716/124089969-b3961e80-da54-11eb-9d8f-d3164ed3637e.png" alt="preview1" />
 <img width="70%" height="70%" src="https://user-images.githubusercontent.com/62119716/124090102-d1638380-da54-11eb-9d52-7393102d615d.png" alt="preview2" />
 <img width="70%" height="70%" src="https://user-images.githubusercontent.com/62119716/124090183-e04a3600-da54-11eb-89f5-7ec19343df53.png" alt="preview3" />
+<img width="70%" height="70%" src="https://user-images.githubusercontent.com/62119716/124185078-c2172100-daba-11eb-8487-961cb7effaa0.png" alt="preview4" />
+<img width="70%" height="70%" src="https://user-images.githubusercontent.com/62119716/124185123-d6f3b480-daba-11eb-90c5-3316ff63437a.png" alt="preview5" />
 
 
 ## Build Setup
