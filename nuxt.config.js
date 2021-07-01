@@ -170,9 +170,7 @@ export default {
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {
-    baseURL: 'https://twente-digibuddy.vercel.app/',
-  },
+  axios: {},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
