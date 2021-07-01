@@ -12,10 +12,18 @@ export interface ApiCompany {
   bubbleLongtitude: number
 }
 
+export interface ApiPerson {
+  name: string
+  position: string
+  company: string
+  bubbleLatitude: number
+  bubbleLongtitude: number
+}
+
 export interface Marker {
   name: string
   location: Array<number>
   tags: Array<string>
-  person?: object
+  person?: ApiPerson
   company?: ApiCompany
 }

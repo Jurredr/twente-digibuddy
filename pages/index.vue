@@ -247,16 +247,27 @@ export default Vue.extend({
     }
   },
   async fetch() {
-    const response = (await this.$axios.$get(
+    const companies = (await this.$axios.$get(
       '/api/companies'
     )) as Array<ApiCompany>
 
+    const persons = (await this.$axios.$get(
+      '/api/persons'
+    )) as Array<ApiCompany>
+
+    // @ts-ignore
     this.markers = [
-      ...response.map((c) => ({
+      ...companies.map((c) => ({
         name: c.name,
         location: [c.bubbleLatitude, c.bubbleLongtitude],
         tags: [],
         company: c,
+      })),
+      ...persons.map((p) => ({
+        name: p.name,
+        location: [p.bubbleLatitude, p.bubbleLongtitude],
+        tags: [],
+        person: p,
       })),
     ]
   },
