@@ -222,22 +222,31 @@ export default Vue.extend({
         name: 'People',
         icon: '🙋‍♂️',
         toggled: true,
-        matches: (m: Marker) => m.person != null},
+        matches: (m: Marker) => m.person != null,
+      },
       {
         name: 'Software',
         icon: '💻',
         toggled: true,
-        matches: (m: Marker) => m.person != null ? false : m.company?.industry === 'Computer Software'},
+        matches: (m: Marker) =>
+          m.person != null
+            ? false
+            : m.company?.industry === 'Computer Software',
+      },
       {
         name: 'E-Learning',
         icon: '🎓',
         toggled: true,
-        matches: (m: Marker) => m.person != null ? false : m.company?.industry === 'E-Learning'},
+        matches: (m: Marker) =>
+          m.person != null ? false : m.company?.industry === 'E-Learning',
+      },
       {
         name: 'Design',
         icon: '🎨',
         toggled: true,
-        matches: (m: Marker) => m.person != null ? false : m.company?.industry === 'Graphic Design'},
+        matches: (m: Marker) =>
+          m.person != null ? false : m.company?.industry === 'Graphic Design',
+      },
     ]
 
     return {
@@ -279,7 +288,10 @@ export default Vue.extend({
         return m1.person && m2.person
       }
 
-      return m1.company.industry === m2.company.industry
+      return (
+        m1.company.industry === m2.company.industry &&
+        m1.company.headquartersCity === m2.company.headquartersCity
+      )
     },
     matchesFilter(marker: Marker) {
       for (let i = 0; i < this.filters.length; i++) {
@@ -287,7 +299,7 @@ export default Vue.extend({
           return true
         }
       }
-    }
+    },
   },
   fetchOnServer: false,
 })
