@@ -154,7 +154,9 @@
       />
 
       <!-- Filters -->
-      <div class="absolute top-6 right-6 flex gap-4">
+      <div
+        class="absolute top-6 right-6 flex gap-4 flex-wrap max-w-xl justify-end"
+      >
         <DButton
           v-for="filter in filters"
           :key="filter.name"
@@ -229,9 +231,7 @@ export default Vue.extend({
         icon: '💻',
         toggled: true,
         matches: (m: Marker) =>
-          m.person != null
-            ? false
-            : m.company?.industry === 'Computer Software',
+          m.person != null ? false : m.company?.industry.includes('Software'),
       },
       {
         name: 'E-Learning',
@@ -245,7 +245,53 @@ export default Vue.extend({
         icon: '🎨',
         toggled: true,
         matches: (m: Marker) =>
-          m.person != null ? false : m.company?.industry === 'Graphic Design',
+          m.person != null ? false : m.company?.industry.includes('Design'),
+      },
+      {
+        name: 'Telecommunications',
+        icon: '📞',
+        toggled: true,
+        matches: (m: Marker) =>
+          m.person != null
+            ? false
+            : m.company?.industry?.startsWith('Telecommunication'),
+      },
+      {
+        name: 'Marketing',
+        icon: '📈',
+        toggled: true,
+        matches: (m: Marker) =>
+          m.person != null ? false : m.company?.industry.includes('Marketing'),
+      },
+      {
+        name: 'Media',
+        icon: '🎥',
+        toggled: true,
+        matches: (m: Marker) =>
+          m.person != null ? false : m.company?.industry?.endsWith('Media'),
+      },
+      {
+        name: 'Publishing',
+        icon: '📚',
+        toggled: true,
+        matches: (m: Marker) =>
+          m.person != null ? false : m.company?.industry.includes('Publishing'),
+      },
+      {
+        name: 'Internet',
+        icon: '🌐',
+        toggled: true,
+        matches: (m: Marker) =>
+          m.person != null ? false : m.company?.industry.includes('Internet'),
+      },
+      {
+        name: 'Information',
+        icon: '🤖',
+        toggled: true,
+        matches: (m: Marker) =>
+          m.person != null
+            ? false
+            : m.company?.industry.includes('Information Technology'),
       },
     ]
 
@@ -341,7 +387,7 @@ export default Vue.extend({
           return selected
             ? '/markers/marker-internet-selected.svg'
             : '/markers/marker-internet.svg'
-        case 'Information Technology':
+        case 'Information Technology & Services':
           return selected
             ? '/markers/marker-it-selected.svg'
             : '/markers/marker-it.svg'

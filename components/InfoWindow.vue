@@ -615,7 +615,7 @@ export default Vue.extend({
           return '🎨'
         case 'Internet':
           return '🌐'
-        case 'Information Technology':
+        case 'Information Technology & Services':
           return '🤖'
         default:
           return '💼'
