@@ -16,6 +16,7 @@
         <p class="font-bold text-white flex gap-2 items-center">
           {{ marker.company ? marker.company.name : marker.person.name }}
           <svg
+            v-if="marker.company != null"
             xmlns="http://www.w3.org/2000/svg"
             width="9.226"
             height="11.276"
@@ -47,7 +48,7 @@
       {{
         marker.company
           ? marker.company.about
-          : "I'm am looking for a partner to collaborate with on a new project for my company"
+          : "I am looking for a partner to collaborate with on a new project for my company"
       }}
     </p>
 
