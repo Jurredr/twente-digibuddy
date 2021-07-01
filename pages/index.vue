@@ -222,22 +222,31 @@ export default Vue.extend({
         name: 'People',
         icon: '🙋‍♂️',
         toggled: true,
-        matches: (m: Marker) => m.person != null},
+        matches: (m: Marker) => m.person != null,
+      },
       {
         name: 'Software',
         icon: '💻',
         toggled: true,
-        matches: (m: Marker) => m.person != null ? false : m.company?.industry === 'Computer Software'},
+        matches: (m: Marker) =>
+          m.person != null
+            ? false
+            : m.company?.industry === 'Computer Software',
+      },
       {
         name: 'E-Learning',
         icon: '🎓',
         toggled: true,
-        matches: (m: Marker) => m.person != null ? false : m.company?.industry === 'E-Learning'},
+        matches: (m: Marker) =>
+          m.person != null ? false : m.company?.industry === 'E-Learning',
+      },
       {
         name: 'Design',
         icon: '🎨',
         toggled: true,
-        matches: (m: Marker) => m.person != null ? false : m.company?.industry === 'Graphic Design'},
+        matches: (m: Marker) =>
+          m.person != null ? false : m.company?.industry === 'Graphic Design',
+      },
     ]
 
     return {
@@ -278,8 +287,10 @@ export default Vue.extend({
       if (!m1.company || !m2.company) {
         return m1.person && m2.person
       }
-
-      return m1.company.industry === m2.company.industry
+      return (
+        m1.company.industry === m2.company.industry &&
+        m1.company.headquartersCity === m2.company.headquartersCity
+      )
     },
     matchesFilter(marker: Marker) {
       for (let i = 0; i < this.filters.length; i++) {
@@ -289,32 +300,57 @@ export default Vue.extend({
       }
     },
     getMarkerLink(marker: Marker, selected: Boolean) {
-      const switchItem = marker.person != null ? 'Person' : marker.company?.industry
+      const switchItem =
+        marker.person != null ? 'Person' : marker.company?.industry
       switch (switchItem) {
         case 'Person':
-          return selected ? '/markers/marker-person-selected.svg' : '/markers/marker-person.svg'
-          case 'E-Learning':
-          return selected ? '/markers/marker-elearning-selected.svg' : '/markers/marker-elearning.svg'
-          case 'Computer Software':
-          return selected ? '/markers/marker-software-selected.svg' : '/markers/marker-software.svg'
-          case 'Telecommunication': case 'Telecommunications':
-          return selected ? '/markers/marker-telecom-selected.svg' : '/markers/marker-telecom.svg'
-          case 'Marketing & Advertising':
-          return selected ? '/markers/marker-marketing-selected.svg' : '/markers/marker-marketing.svg'
-          case 'Broadcast Media': case 'Online Media':
-          return selected ? '/markers/marker-media-selected.svg' : '/markers/marker-media.svg'
-          case 'Publishing':
-          return selected ? '/markers/marker-publishing-selected.svg' : '/markers/marker-publishing.svg'
-          case 'Graphic Design':
-          return selected ? '/markers/marker-graphicdesign-selected.svg' : '/markers/marker-graphicdesign.svg'
-          case 'Internet':
-          return selected ? '/markers/marker-internet-selected.svg' : '/markers/marker-internet.svg'
-          case 'Information Technology':
-          return selected ? '/markers/marker-it-selected.svg' : '/markers/marker-it.svg'
-          default:
-          return selected ? '/markers/marker-default-selected.svg' : '/markers/marker-default.svg'
+          return selected
+            ? '/markers/marker-person-selected.svg'
+            : '/markers/marker-person.svg'
+        case 'E-Learning':
+          return selected
+            ? '/markers/marker-elearning-selected.svg'
+            : '/markers/marker-elearning.svg'
+        case 'Computer Software':
+          return selected
+            ? '/markers/marker-software-selected.svg'
+            : '/markers/marker-software.svg'
+        case 'Telecommunication':
+        case 'Telecommunications':
+          return selected
+            ? '/markers/marker-telecom-selected.svg'
+            : '/markers/marker-telecom.svg'
+        case 'Marketing & Advertising':
+          return selected
+            ? '/markers/marker-marketing-selected.svg'
+            : '/markers/marker-marketing.svg'
+        case 'Broadcast Media':
+        case 'Online Media':
+          return selected
+            ? '/markers/marker-media-selected.svg'
+            : '/markers/marker-media.svg'
+        case 'Publishing':
+          return selected
+            ? '/markers/marker-publishing-selected.svg'
+            : '/markers/marker-publishing.svg'
+        case 'Graphic Design':
+          return selected
+            ? '/markers/marker-graphicdesign-selected.svg'
+            : '/markers/marker-graphicdesign.svg'
+        case 'Internet':
+          return selected
+            ? '/markers/marker-internet-selected.svg'
+            : '/markers/marker-internet.svg'
+        case 'Information Technology':
+          return selected
+            ? '/markers/marker-it-selected.svg'
+            : '/markers/marker-it.svg'
+        default:
+          return selected
+            ? '/markers/marker-default-selected.svg'
+            : '/markers/marker-default.svg'
       }
-    }
+    },
   },
   fetchOnServer: false,
 })
