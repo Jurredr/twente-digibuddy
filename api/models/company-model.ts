@@ -40,10 +40,6 @@ const companySchema = new Schema(
       type: String,
       required: false,
     },
-    connections: {
-      type: String,
-      required: false,
-    },
     comparable: {
       type: String,
       required: false,
