@@ -265,7 +265,7 @@
             />
           </svg>
         </a>
-        <div class="mt-4 bg-dark rounded-t-3xl flex justify-center gap-8">
+        <div class="mt-4 bg-midDark rounded-t-3xl flex justify-center gap-8">
           <div class="mt-5 mb-5">
             <InfoFeature icon="💼" name="Employees" value="16" />
             <InfoFeature class="mt-3" icon="👥" name="Connections" value="4" />
@@ -497,6 +497,10 @@
           />
         </svg>
       </a>
+    </div>
+    <div v-else class="flex mt-4 p-3 justify-center items-center gap-10 bg-midDark rounded-3xl">
+      <InfoFeature icon="💼" name="Company" value="JurreBV" />
+      <InfoFeature icon="🛠" name="Position" value="CEO" />
     </div>
   </div>
 </template>
