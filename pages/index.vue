@@ -272,8 +272,12 @@ export default Vue.extend({
     ]
   },
   methods: {
-    hasConnection(_m1: Marker, _m2: Marker) {
-      return true
+    hasConnection(m1: Marker, m2: Marker) {
+      if (!m1.company || !m2.company) {
+        return m1.person && m2.person
+      }
+
+      return m1.company.industry === m2.company.industry
     },
   },
   fetchOnServer: false,
