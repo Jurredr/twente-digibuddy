@@ -20,28 +20,6 @@
           },
         }"
       >
-        <GmapInfoWindow :position="{ lat: 52.21833, lng: 6.89583 }">
-          <div class="font-montserrat text-base px-4 py-2">
-            <p class="font-bold mb-2">1Twente</p>
-            <p>
-              <span class="font-semibold mr-2">Industry</span>Broadcast Media
-            </p>
-            <p class="mb-2">
-              <span class="font-semibold mr-2">Website</span
-              ><a class="text-pink underline" href="https://www.1twente.nl"
-                >https://www.1twente.nl</a
-              >
-            </p>
-            <p class="max-w-sm mb-4">
-              Bij 1Twente hoor en zie je dagelijks de laatste actualiteiten uit
-              Twente. Wij zijn te vinden op televisie, radio en online.
-            </p>
-            <div class="flex gap-2">
-              <DButton>Show connections</DButton>
-              <DButton>Doe iets anders leuks</DButton>
-            </div>
-          </div>
-        </GmapInfoWindow>
         <template v-for="marker in markers">
           <GmapMarker
             v-if="selectedFilter.matches(marker)"
@@ -49,12 +27,62 @@
             :position="{ lat: marker.location[0], lng: marker.location[1] }"
             :title="marker.name"
             icon="http://maps.google.com/mapfiles/kml/paddle/purple-blank.png"
+            @click="
+              selectedMarker = marker
+              infoWindowShown = true
+            "
           />
+        </template>
+
+        <template v-if="selectedMarker !== null">
+          <template v-for="connection in markers">
+            <GmapPolyline
+              v-if="hasConnection(selectedMarker, connection)"
+              :key="connection.name"
+              :editable="false"
+              :path="[
+                {
+                  lat: selectedMarker.location[0],
+                  lng: selectedMarker.location[1],
+                },
+                {
+                  lat: connection.location[0],
+                  lng: connection.location[1],
+                },
+              ]"
+            />
+          </template>
+
+          <GmapInfoWindow
+            :opened="infoWindowShown"
+            :position="{
+              lat: selectedMarker.location[0],
+              lng: selectedMarker.location[1],
+            }"
+            :options="{
+              pixelOffset: {
+                width: 0,
+                height: -35,
+              },
+            }"
+            @closeclick="infoWindowShown = false"
+          >
+            <div class="font-montserrat text-base px-4 py-2">
+              <p class="font-bold mb-2">{{ selectedMarker.name }}</p>
+              <div class="flex gap-2">
+                <DButton>Show connections</DButton>
+                <DButton>Doe iets anders leuks</DButton>
+              </div>
+            </div>
+          </GmapInfoWindow>
         </template>
       </GmapMap>
 
       <!-- Help -->
-      <DButton class="absolute top-6 left-6 text-sm h-11 hvr-grow" @click="helpShown = true">
+      <DButton
+        class="absolute top-6 left-6 text-sm h-11 hvr-grow"
+        @click="helpShown = true"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="18.157"
@@ -105,7 +133,13 @@
       </DButton>
 
       <!-- Language Selector -->
-      <SwitchButton class="absolute top-20 left-6" option1="🇳🇱" option2="🇬🇧" locale1="nl" locale2="en" />
+      <SwitchButton
+        class="absolute top-20 left-6"
+        option1="🇳🇱"
+        option2="🇬🇧"
+        locale1="nl"
+        locale2="en"
+      />
 
       <!-- Filters -->
       <div class="absolute top-6 right-6 flex gap-4">
@@ -195,6 +229,8 @@ export default Vue.extend({
       helpShown: false,
       filters,
       selectedFilter: filters[0],
+      selectedMarker: null,
+      infoWindowShown: false,
       markers: [
         {
           name: 'Somewhere',
@@ -223,6 +259,11 @@ export default Vue.extend({
         },
       ] as Array<Marker>,
     }
+  },
+  methods: {
+    hasConnection(m1: Marker, m2: Marker) {
+      return true
+    },
   },
 })
 </script>
