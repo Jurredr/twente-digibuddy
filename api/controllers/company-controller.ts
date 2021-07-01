@@ -1,6 +1,6 @@
 import companies from '../models/company-model'
 
-async function createCompany(
+export async function createCompany(
   linkedinUrl: string,
   name: String,
   companySize: String,

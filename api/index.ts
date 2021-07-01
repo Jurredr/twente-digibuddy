@@ -4,6 +4,10 @@ import express from 'express'
 // Import mongoose
 import mongoose from 'mongoose'
 
+import csv from 'csv'
+import { readFileSync } from 'fs'
+import { createCompany } from './controllers/company-controller'
+
 // Import API routes
 const companyRoutes = require('./routes/company-routes')
 const personRoutes = require('./routes/person-routes')
@@ -46,6 +50,41 @@ function startListening() {
       console.log(`API server listening on port ${port}`)
     })
   }
+
+  return
+
+  // @ts-ignore
+  const generateNumber = function (min, max) {
+    const range = max - min
+    return min + range * Math.random()
+  }
+
+  let i = 0
+  csv
+    // @ts-ignore
+    .parse(readFileSync('./assets/datasets/companies_details.csv').toString())
+    .pipe(
+      // @ts-ignore
+      csv.transform(function (record) {
+        i++
+        if (i === 1) return
+        if (i > 50) return
+
+        createCompany(
+          record[0],
+          record[1],
+          record[2].replace(' employees', ''),
+          record[3],
+          'Our company provides various services that help you in the digital world of Twente.',
+          record[5],
+          record[6].replace('.0', ''),
+          record[9],
+          'Hengelosestraat 22',
+          generateNumber(52.10603712615544, 52.30975249383111),
+          generateNumber(6.744700622558593, 7.052454528808594)
+        )
+      })
+    )
 }
 
 // Export express app
