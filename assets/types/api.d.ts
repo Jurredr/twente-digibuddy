@@ -23,7 +23,6 @@ export interface ApiPerson {
 export interface Marker {
   name: string
   location: Array<number>
-  tags: Array<string>
   person?: ApiPerson
   company?: ApiCompany
 }

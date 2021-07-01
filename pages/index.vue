@@ -22,7 +22,7 @@
       >
         <template v-for="marker in markers">
           <GmapMarker
-            v-if="selectedFilter.matches(marker)"
+            v-if="matchesFilter(marker)"
             :key="marker.name"
             :position="{ lat: marker.location[0], lng: marker.location[1] }"
             :title="marker.name"
@@ -44,7 +44,7 @@
             <template v-for="connection in markers">
               <GmapPolyline
                 v-if="
-                  selectedFilter.matches(connection) &&
+                  matchesFilter(connection) &&
                   hasConnection(selectedMarker, connection)
                 "
                 :key="connection.name"
@@ -92,6 +92,7 @@
       <!-- Help -->
       <DButton
         class="absolute top-6 left-6 text-sm h-11 hvr-grow"
+        selected
         @click="helpShown = true"
       >
         <svg
@@ -158,8 +159,8 @@
           v-for="filter in filters"
           :key="filter.name"
           href="javascript:void(0)"
-          :selected="selectedFilter === filter"
-          @click="selectedFilter = filter"
+          :selected="filter.toggled"
+          @click="filter.toggled = !filter.toggled"
         >
           <p>{{ filter.icon }}</p>
           <p class="text-sm ml-1">{{ filter.name }}</p>
@@ -217,29 +218,32 @@ import type { ApiCompany, Marker } from '../assets/types/api'
 export default Vue.extend({
   data() {
     const filters = [
-      { name: 'All', icon: '🙋‍♂️', matches: (_: Marker) => true },
-      {
-        name: 'Persons',
-        icon: '🙋‍♂️',
-        matches: (m: Marker) => m.tags.includes('persons'),
-      },
       {
         name: 'People',
         icon: '🙋‍♂️',
-        matches: (m: Marker) => m.tags.includes('people'),
-      },
+        toggled: true,
+        matches: (m: Marker) => m.person != null},
       {
-        name: 'Things',
-        icon: '🙋‍♂️',
-        matches: (m: Marker) => m.tags.includes('things'),
-      },
+        name: 'Software',
+        icon: '💻',
+        toggled: true,
+        matches: (m: Marker) => m.person != null ? false : m.company?.industry === 'Computer Software'},
+      {
+        name: 'E-Learning',
+        icon: '🎓',
+        toggled: true,
+        matches: (m: Marker) => m.person != null ? false : m.company?.industry === 'E-Learning'},
+      {
+        name: 'Design',
+        icon: '🎨',
+        toggled: true,
+        matches: (m: Marker) => m.person != null ? false : m.company?.industry === 'Graphic Design'},
     ]
 
     return {
       introShown: true,
       helpShown: false,
       filters,
-      selectedFilter: filters[0],
       selectedMarker: null,
       infoWindowShown: false,
       showConnections: true,
@@ -260,13 +264,11 @@ export default Vue.extend({
       ...companies.map((c) => ({
         name: c.name,
         location: [c.bubbleLatitude, c.bubbleLongtitude],
-        tags: [],
         company: c,
       })),
       ...persons.map((p) => ({
         name: p.name,
         location: [p.bubbleLatitude, p.bubbleLongtitude],
-        tags: [],
         person: p,
       })),
     ]
@@ -275,6 +277,13 @@ export default Vue.extend({
     hasConnection(_m1: Marker, _m2: Marker) {
       return true
     },
+    matchesFilter(marker: Marker) {
+      for (let i = 0; i < this.filters.length; i++) {
+        if (this.filters[i].toggled && this.filters[i].matches(marker)) {
+          return true
+        }
+      }
+    }
   },
   fetchOnServer: false,
 })

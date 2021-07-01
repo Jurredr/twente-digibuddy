@@ -123,7 +123,6 @@
       <DButton
         href="mailto:info@wired-u.nl"
         class="mt-8 mb-2 font-semibold text-sm text-light px-8 py-3 hvr-grow"
-        selected
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
