@@ -147,6 +147,11 @@ export default {
     'nuxt-i18n',
   ],
 
+  // Server Middleware
+  serverMiddleware: {
+    '/api': '~/api',
+  },
+
   // i18n module configuration: https://i18n.nuxtjs.org/
   i18n: {
     vueI18nLoader: true,
@@ -161,7 +166,7 @@ export default {
         name: 'English',
       },
     ],
-    vueI18n: i18n
+    vueI18n: i18n,
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
