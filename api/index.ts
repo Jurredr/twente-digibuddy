@@ -7,6 +7,7 @@ import mongoose from 'mongoose'
 // Import API routes
 const companyRoutes = require('./routes/company-routes')
 const personRoutes = require('./routes/person-routes')
+const connectionRoutes = require('./routes/connection-routes')
 
 // Create express instance
 const app = express()
@@ -35,6 +36,7 @@ app.use(express.json())
 // Implement API routes
 app.use(companyRoutes)
 app.use(personRoutes)
+app.use(connectionRoutes)
 
 // Start standalone server if directly running
 function startListening() {
