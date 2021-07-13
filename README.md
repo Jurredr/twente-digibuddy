@@ -43,3 +43,5 @@ $ yarn start
 # generate static project
 $ yarn generate
 ```
+
+Additionally, make sure to add a `.env` file in the root, containing a MongoDB Database URI named 'DB_URI'.
