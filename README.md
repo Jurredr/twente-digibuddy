@@ -1,6 +1,6 @@
 ![image](https://user-images.githubusercontent.com/62119716/124087389-3d90b800-da52-11eb-867a-e76ac4c7bebc.png)
 
-***By [Jurre de Ruiter](https://github.com/jurredr) & [Chris Bleeker](https://github.com/SlagHoedje/)***
+***By [Jurre de Ruiter](https://github.com/jurredr) & [Chris Bleeker](https://github.com/chrrs/)***
 
 ## About
 How do we put digital Twente on the map? A question that is not easily answered, but we gave it our best shot!
